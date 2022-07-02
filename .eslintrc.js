@@ -18,5 +18,6 @@ module.exports = {
 		'react/prop-types': 0,
 		'linebreak-style': ['error', require('os').EOL === '\r\n' ? 'windows' : 'unix'],
 		'import/prefer-default-export': 'off',
+		'react/jsx-props-no-spreading': 'off',
 	},
 };
