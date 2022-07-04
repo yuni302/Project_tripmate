@@ -42,9 +42,9 @@ function Header() {
 			{mode > 992 ? (
 				<HeaderStyle>
 					<header className="header">
-						<h3 className="myPage">로그인</h3>
-						<h3 className="myPage">장바구니</h3>
-						<h3 className="myPage">마이페이지</h3>
+						<p className="myPage">로그인</p>
+						<p className="myPage">장바구니</p>
+						<p className="myPage">마이페이지</p>
 					</header>
 					<hr />
 
@@ -52,10 +52,10 @@ function Header() {
 						<h1>
 							<Logo />
 						</h1>
-						<h2 className="content">
+						<p className="content">
 							<span>추천 여행 상품</span>
-						</h2>
-						<h2 className="content">
+						</p>
+						<p className="content">
 							<span>그룹별 여행</span>
 							<nav>2030끼리</nav>
 							<nav>4050끼리</nav>
@@ -63,16 +63,16 @@ function Header() {
 							<nav>여자끼리</nav>
 							<nav>남자끼리</nav>
 							<nav>자녀동반</nav>
-						</h2>
-						<h2 className="content">
+						</p>
+						<p className="content">
 							<span>테마별 여행</span>
 							<nav>문화탐방</nav>
 							<nav>휴양지</nav>
 							<nav>골프여행</nav>
 							<nav>트레킹</nav>
 							<nav>성지순례</nav>
-						</h2>
-						<h2 className="content">
+						</p>
+						<p className="content">
 							<span>지역별 여행</span>
 							<nav>동남아/태평양</nav>
 							<nav>인도/중앙아시아</nav>
@@ -80,14 +80,14 @@ function Header() {
 							<nav>유럽/코카서스</nav>
 							<nav>중남미/북미</nav>
 							<nav>대만/중국/일본</nav>
-						</h2>
-						<h2 className="content">
+						</p>
+						<p className="content info">
 							<span>고객 센터</span>
 							<nav>공지사항</nav>
 							<nav>자주 묻는 질문</nav>
 							<nav>1:1 문의</nav>
 							<nav>단체 문의</nav>
-						</h2>
+						</p>
 					</header>
 				</HeaderStyle>
 			) : (
