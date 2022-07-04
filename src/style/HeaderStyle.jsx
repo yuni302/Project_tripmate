@@ -36,7 +36,7 @@ export const HeaderStyle = styled.div`
 		&:hover {
 			background-color: #fff;
 		}
-		h3 {
+		.myPage {
 			display: inline-block;
 			text-align: center;
 			width: 10%;
@@ -46,9 +46,6 @@ export const HeaderStyle = styled.div`
 			cursor: pointer;
 			max-height: 54px;
 			box-sizing: border-box;
-			&:hover {
-				border-bottom: 4px solid #929292;
-			}
 		}
 	}
 	#header {
@@ -79,7 +76,7 @@ export const HeaderStyle = styled.div`
 			}
 		}
 
-		h2 {
+		.content {
 			position: relative;
 			width: 15%;
 			max-width: 189px;
@@ -158,7 +155,7 @@ export const MobileHeaderStyle = styled(HeaderStyle)`
 		justify-content: center;
 		align-items: center;
 		max-width: 992px;
-		h2 {
+		.content {
 			max-height: 34px;
 			width: 20%;
 			max-width: 200px;
