@@ -12,6 +12,7 @@ export const GroupCard = styled.div`
 	width: 336px;
 	height: 503px;
 	margin: 0 12px;
+	filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.1));
 	img {
 		width: 336px;
 		height: 315px;
@@ -48,11 +49,12 @@ export const GroupCard = styled.div`
 	.hash-tag {
 		display: inline-block;
 		font-size: 16px;
-		background: #e9f7ff;
-		color: #0080c6;
+		background: #ececec;
+		color: #000;
 		margin: 0 4px;
 		padding: 5px 14px;
 		border-radius: 30px;
+
 		&:first-child {
 			margin-left: 0;
 		}
