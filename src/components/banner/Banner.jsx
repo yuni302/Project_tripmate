@@ -11,9 +11,16 @@ function Banner() {
 	const [bannerList, setBannerList] = useState([]);
 
 	useEffect(() => {
-		fetch('https://bobbykjh.github.io/banner.json')
-			.then((response) => response.json())
-			.then((data) => setBannerList(data));
+		const getBannerData = async () => {
+			try {
+				const res = await axios.get('https://bobbykjh.github.io/banner.json');
+				if (res.status !== 200) throw new Error("Can't find news");
+				setBannerList(res.data);
+			} catch (e) {
+				console.error(e);
+			}
+		};
+		getBannerData();
 	}, []);
 
 	useEffect(() => {
@@ -23,19 +30,18 @@ function Banner() {
 
 	const settings = {
 		dots: true,
-		speed: 1000,
+		speed: 2000,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
-		autoplay: false,
-		autoplaySpeed: 2000,
-		pauseOnHover: true,
+		autoplay: true,
+		autoplaySpeed: 3000,
 	};
 	const bannerItems = bannerList.map((data) => (
 		<div key={data.title}>
 			<p>{data.hashtag}</p>
 			<h1>{data.title}</h1>
-			<a href="*">see more -&gt;</a>
+			<a href="*">see more →</a>
 		</div>
 	));
 	const bannerPhoto = bannerList.map((data) => (
