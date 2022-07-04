@@ -9,11 +9,11 @@ function Card({ Img, Title, Content = '', Price, Group, Theme, Package }) {
 				<span className="hashTag">{Theme}</span>
 				<span className="hashTag">{Package}</span>
 				{/* 제목 */}
-				<h1 className="title">{Title}</h1>
+				<p className="title">{Title}</p>
 				{/* 내용 */}
-				<h2 className="content">{Content}</h2>
+				<p className="content">{Content}</p>
 				{/* 가격 */}
-				<h3 className="price">{Price}원</h3>
+				<p className="price">{Price}원</p>
 			</div>
 		</>
 	);
