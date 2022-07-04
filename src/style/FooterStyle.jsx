@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const FooterStyle = styled.div`
+	box-sizing: border-box;
 	width: 100%;
-	max-height: 685px;
-	display: block;
+	min-height: 685px;
 	background-color: #383838;
 	border: 1px solid black;
 	font-family: 'Pretendard';
@@ -12,7 +12,7 @@ export const FooterStyle = styled.div`
 	font-size: 18px;
 	line-height: 21px;
 	.footer-contents {
-		display: block;
+		position: relative;
 		margin: 0 auto;
 		width: 100%;
 		max-width: 1440px;
@@ -21,19 +21,28 @@ export const FooterStyle = styled.div`
 			color: #fff;
 			text-decoration: none;
 		}
-		.footer-nav {
+		ul,
+		p {
+			margin: 0;
+		}
+		.footer-menu {
 			display: flex;
 			width: 100%;
 			justify-content: space-between;
+			margin: 50px 0 20px;
 			.footer-terms {
+				list-style: none;
+				align-items: center;
 				display: flex;
+				padding: 0;
 				li {
-					margin: 50px 20px 20px 0;
+					margin-right: 20px;
 				}
 			}
 			.footer-sns {
+				list-style: none;
 				display: flex;
-				margin-top: 50px;
+				align-items: center;
 				li {
 					margin-left: 23px;
 					&:first-child {
@@ -42,13 +51,9 @@ export const FooterStyle = styled.div`
 				}
 			}
 		}
-
-		h2 {
-			margin-bottom: 20px;
-		}
-		.section1 {
+		section {
+			margin-top: 20px;
 			display: flex;
-			margin: 20px 0 20px;
 			.footer-info {
 				margin-right: 165px;
 				p {
@@ -74,29 +79,28 @@ export const FooterStyle = styled.div`
 				}
 			}
 		}
-		.section2 {
-			.footer-licensee {
-				margin-bottom: 30px;
-			}
-			.footer-guide {
-				margin-bottom: 30px;
-			}
-			.footer-copyright {
-				margin-bottom: 50px;
-			}
+		.footer-licensee {
+			margin: 20px 0 30px;
+			font-style: normal;
+		}
+		.footer-guide {
+			margin-bottom: 30px;
 		}
 		button {
-			display: block;
+			position: absolute;
+			left: 50%;
+			top: 539px;
+			transform: translate(-50%, -50%);
 			background-color: #383838;
 			color: #fff;
-			margin: 50px auto 100px;
 			border: 1px solid #fff;
 			font-family: 'Pretendard';
 			font-style: normal;
 			font-weight: 700;
 			font-size: 12px;
 			line-height: 14px;
-			padding: 16px 214px;
+			width: 516px;
+			height: 46px;
 		}
 	}
 `;
