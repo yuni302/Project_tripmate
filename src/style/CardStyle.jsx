@@ -45,7 +45,7 @@ export const BasicCard = styled.div`
 		font-weight: 600;
 		bottom: 20px;
 	}
-	.hashTag {
+	.hash-tag {
 		display: inline-block;
 		font-size: 16px;
 		background: #e9f7ff;
@@ -57,6 +57,7 @@ export const BasicCard = styled.div`
 			margin-left: 0;
 		}
 	}
+
 	div {
 		margin: 0 20px;
 	}
