@@ -54,10 +54,10 @@ function MobileHeader() {
 				</div>
 			</header>
 			<header id="header" style={{ position: fixed }}>
-				<h2 className="content">
+				<p className="content">
 					<span>추천 여행 상품</span>
-				</h2>
-				<h2 className="content">
+				</p>
+				<p className="content">
 					<span>그룹별 여행</span>
 					<nav>2030끼리</nav>
 					<nav>4050끼리</nav>
@@ -65,16 +65,16 @@ function MobileHeader() {
 					<nav>여자끼리</nav>
 					<nav>남자끼리</nav>
 					<nav>자녀동반</nav>
-				</h2>
-				<h2 className="content">
+				</p>
+				<p className="content">
 					<span>테마별 여행</span>
 					<nav>문화탐방</nav>
 					<nav>휴양지</nav>
 					<nav>골프여행</nav>
 					<nav>트레킹</nav>
 					<nav>성지순례</nav>
-				</h2>
-				<h2 className="content">
+				</p>
+				<p className="content">
 					<span>지역별 여행</span>
 					<nav>동남아/태평양</nav>
 					<nav>인도/중앙아시아</nav>
@@ -82,14 +82,14 @@ function MobileHeader() {
 					<nav>유럽/코카서스</nav>
 					<nav>중남미/북미</nav>
 					<nav>대만/중국/일본</nav>
-				</h2>
-				<h2 className="content">
+				</p>
+				<p className="content info">
 					<span>고객 센터</span>
 					<nav>공지사항</nav>
 					<nav>자주 묻는 질문</nav>
 					<nav>1:1 문의</nav>
 					<nav>단체 문의</nav>
-				</h2>
+				</p>
 			</header>
 		</MobileHeaderStyle>
 	);
