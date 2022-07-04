@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-// 기본 Card Style(그룹별 다크)
+// 기본 Card Style(그룹별 카드)
 export const GroupCard = styled.div`
 	position: relative;
 	display: inline-block;
