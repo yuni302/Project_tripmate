@@ -20,7 +20,6 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font-family: "Pretendard";
-  font-weight: 700;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
