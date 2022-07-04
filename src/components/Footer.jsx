@@ -10,53 +10,43 @@ function Footer() {
 		<FooterStyle>
 			<div id="footer">
 				<div className="footer-contents">
-					<div className="footer-nav">
+					<div className="footer-menu">
 						<ul className="footer-terms">
 							<li>
-								<a href="/" target="_blank">
-									안심카드 결제
-								</a>
+								<a href="/">안심카드 결제</a>
 							</li>
 							<li>
-								<a href="/" target="_blank">
-									이용약관
-								</a>
+								<a href="/">이용약관</a>
 							</li>
 							<li>
-								<a href="/" target="_blank">
-									개인정보처리방침
-								</a>
+								<a href="/">개인정보처리방침</a>
 							</li>
 							<li>
-								<a href="/" target="_blank">
-									여행약관
-								</a>
+								<a href="/">여행약관</a>
 							</li>
 						</ul>
 						<ul className="footer-sns">
 							<li>
-								<a href="/" target="_blank">
+								<a href="/">
 									<img alt="icon" src={Youtube} />
 								</a>
 							</li>
 							<li>
-								<a href="/" target="_blank">
+								<a href="/">
 									<img alt="icon" src={Facebook} />
 								</a>
 							</li>
 							<li>
-								<a href="/" target="_blank">
+								<a href="/">
 									<img alt="icon" src={Instagram} />
 								</a>
 							</li>
 						</ul>
 					</div>
 
-					<h2>
-						<img alt="logo" src={Logo} />
-					</h2>
+					<img alt="logo" src={Logo} />
 
-					<div className="section1">
+					<section>
 						<div className="footer-info">
 							<p>고객센터</p>
 							<p>
@@ -75,28 +65,25 @@ function Footer() {
 							</p>
 							<p>(주)더샤이니</p>
 						</div>
-					</div>
+					</section>
 
-					<div className="section2">
-						<address className="footer-licensee">
-							<p>
-								상호명: (주)더샤이니ㅣ대표: 김소영ㅣ개인정보보호책임자: 김승덕 ㅣ주소: 서울특별시 중구
-								청계천로40(한국관광공사 서울센터) 707호
-							</p>
-							<p>
-								사업자등록번호: 495-87-02492ㅣ통신판매업신고번호: 2021-서울중구-2450ㅣ이메일:
-								gotogether@shinytravels.com
-							</p>
-						</address>
-						<div className="footer-guide">
-							<p>고투게더 서비스 내 결제 발생 시 고객상담, 취소, 환불 등의 거래에 대하여 책임을 집니다.</p>
-							<p>
-								고투게더는 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품, 거래정보 및 거래에 대하여
-								책임을 지지 않습니다.
-							</p>
-						</div>
-						<p className="footer-copyright">Copyright ⓒ 2022 고투게더 All rights reserved.</p>
+					<address className="footer-licensee">
+						<p>
+							상호명: (주)더샤이니ㅣ대표: 김소영ㅣ개인정보보호책임자: 김승덕 ㅣ주소: 서울특별시 중구
+							청계천로40(한국관광공사 서울센터) 707호
+						</p>
+						<p>
+							사업자등록번호: 495-87-02492ㅣ통신판매업신고번호: 2021-서울중구-2450ㅣ이메일: gotogether@shinytravels.com
+						</p>
+					</address>
+					<div className="footer-guide">
+						<p>고투게더 서비스 내 결제 발생 시 고객상담, 취소, 환불 등의 거래에 대하여 책임을 집니다.</p>
+						<p>
+							고투게더는 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품, 거래정보 및 거래에 대하여 책임을
+							지지 않습니다.
+						</p>
 					</div>
+					<p className="footer-copyright">Copyright ⓒ 2022 고투게더 All rights reserved.</p>
 					<button type="button">모바일 모드로 보기</button>
 				</div>
 			</div>
