@@ -17,27 +17,35 @@ export const BasicCard = styled.div`
 		height: 315px;
 		margin-bottom: 20px;
 	}
-	h1 {
+	.title {
 		word-wrap: break-word;
 		font-size: 20px;
 		font-weight: 600;
 		margin: 10px 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
-	h2 {
-		display: block;
+	.content {
 		word-wrap: break-word;
 		font-size: 18px;
 		font-weight: 400;
 		margin: 0;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		word-break: break-word;
+		display: -webkit-box;
+		-webkit-line-clamp: 2; // 원하는 라인수
+		-webkit-box-orient: vertical;
 	}
 	/* h1 과 나눈이유는 다른 card 에서 사용할 때 필요하기 때문 */
-	h3 {
+	.price {
 		position: absolute;
 		font-size: 20px;
 		font-weight: 600;
 		bottom: 20px;
 	}
-	span {
+	.hashTag {
 		display: inline-block;
 		font-size: 16px;
 		background: #e9f7ff;
