@@ -30,7 +30,7 @@ function GroupFilter({ content }) {
 							Price={res.price}
 							Group={res.group}
 							Theme={res.theme}
-							Package={res.Package}
+							Package={res.package}
 						/>
 					</BasicCard>
 				))}
