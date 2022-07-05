@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-s;
+
 export const MainTitle = styled.p`
 	font-family: 'Pretendard';
 	color: #000000;
@@ -33,6 +33,10 @@ export const ButtonGroup = styled.div`
 		font-weight: 500;
 		line-height: 24px;
 		margin: 0;
+	}
+	.active {
+		background-color: #0080c6;
+		color: #ffffff;
 	}
 `;
 
