@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Box } from '../../../style/mainstyle/GroupStyle';
-import { BasicCard } from '../../../style/commonstyle/CardStyle';
+import { GroupCard } from '../../../style/commonstyle/CardStyle';
 import Card from '../../card/Card';
 
 function GroupFilter({ content }) {
@@ -22,7 +22,7 @@ function GroupFilter({ content }) {
 				.filter((res) => res.group === content)
 				.slice(0, 3)
 				.map((res) => (
-					<BasicCard key={res.id}>
+					<GroupCard key={res.id}>
 						<Card
 							Img={res.img}
 							Title={res.name}
@@ -32,7 +32,7 @@ function GroupFilter({ content }) {
 							Theme={res.theme}
 							Package={res.package}
 						/>
-					</BasicCard>
+					</GroupCard>
 				))}
 		</Box>
 	);
