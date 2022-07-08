@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { MobileHeaderStyle } from '../style/HeaderStyle';
 import { ReactComponent as Mobile } from '../img/MobileLogo.svg';
 import { ReactComponent as Login } from '../img/LogIn.svg';
@@ -10,7 +11,7 @@ function MobileHeader() {
 	const [scroll, setScroll] = useState(0);
 	const [fixed, setFixed] = useState('relative');
 
-	function handleScroll() {
+	const handleScroll = () => {
 		if (scroll > 78) {
 			setScroll(window.pageYOffset);
 			setFixed('fixed');
@@ -18,12 +19,12 @@ function MobileHeader() {
 			setScroll(window.pageYOffset);
 			setFixed('relative');
 		}
-	}
+	};
 
 	useEffect(() => {
-		function scrollListener() {
+		const scrollListener = () => {
 			window.addEventListener('scroll', handleScroll);
-		} //  window 에서 스크롤을 감시 시작
+		}; //  window 에서 스크롤을 감시 시작
 		scrollListener(); // window 에서 스크롤을 감시
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
@@ -35,30 +36,42 @@ function MobileHeader() {
 			<header className="header">
 				<div>
 					<div>
-						<Search />
+						<Link to="/search">
+							<Search />
+						</Link>
 					</div>
 					<div>
 						<Shopping />
 					</div>
 				</div>
 				<h1>
-					<Mobile />
+					<Link to="/">
+						<Mobile />
+					</Link>
 				</h1>
 				<div>
 					<div>
-						<Login />
+						<Link to="/login">
+							<Login />
+						</Link>
 					</div>
 					<div>
-						<User />
+						<Link to="/mypage">
+							<User />
+						</Link>
 					</div>
 				</div>
 			</header>
 			<header id="header" style={{ position: fixed }}>
 				<p className="content">
-					<span>추천 여행 상품</span>
+					<Link to="/recommendedlist">
+						<span>추천 여행 상품</span>
+					</Link>
 				</p>
 				<p className="content">
-					<span>그룹별 여행</span>
+					<Link to="/grouplist">
+						<span>그룹별 여행</span>
+					</Link>
 					<nav>2030끼리</nav>
 					<nav>4050끼리</nav>
 					<nav>6070끼리</nav>
@@ -67,7 +80,9 @@ function MobileHeader() {
 					<nav>자녀동반</nav>
 				</p>
 				<p className="content">
-					<span>테마별 여행</span>
+					<Link to="/themelist">
+						<span>테마별 여행</span>
+					</Link>
 					<nav>문화탐방</nav>
 					<nav>휴양지</nav>
 					<nav>골프여행</nav>
@@ -75,7 +90,9 @@ function MobileHeader() {
 					<nav>성지순례</nav>
 				</p>
 				<p className="content">
-					<span>지역별 여행</span>
+					<Link to="/arealist">
+						<span>지역별 여행</span>
+					</Link>
 					<nav>동남아/태평양</nav>
 					<nav>인도/중앙아시아</nav>
 					<nav>아프리카/중동</nav>
