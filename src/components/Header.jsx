@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ReactComponent as Logo } from '../img/logo.svg';
+import { ReactComponent as Logo } from '../img/HeaderLogo.svg';
 import { HeaderStyle } from '../style/HeaderStyle';
 import MobileHeader from './MobileHeader';
 
