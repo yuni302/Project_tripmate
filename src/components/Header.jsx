@@ -46,9 +46,7 @@ function Header() {
 						<p className="myPage">
 							<Link to="/login">로그인</Link>
 						</p>
-						<p className="myPage">
-							<Link to="/">장바구니</Link>
-						</p>
+						<p className="myPage">장바구니</p>
 						<p className="myPage">
 							<Link to="/mypage">마이페이지</Link>
 						</p>
