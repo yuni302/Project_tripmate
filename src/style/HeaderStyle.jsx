@@ -55,7 +55,7 @@ export const HeaderStyle = styled.div`
 		justify-content: center;
 		box-sizing: border-box;
 		max-height: 58px;
-		background-color: #ffffff90;
+		background-color: #fff;
 		transition: 1s;
 		top: 0;
 		&:hover {
@@ -106,7 +106,7 @@ export const HeaderStyle = styled.div`
 				font-size: 16px;
 				transition: 0.5s;
 				padding: 20px 0;
-				background-color: #ffffff;
+				background-color: #fff;
 				color: #1b1b1b;
 				cursor: pointer;
 				&:last-child {
