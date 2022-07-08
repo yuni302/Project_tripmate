@@ -1,9 +1,9 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { MainTitle } from '../../../style/GroupStyle';
-import { ThemeSlider } from '../../../style/ThemeStyle';
-import { NormalCard } from '../../../style/CardStyle';
-import Card from '../../card/Card';
+import { MainTitle } from '../../../style/mainstyle/GroupStyle';
+import { ThemeSlider } from '../../../style/mainstyle/ThemeStyle';
+import { NormalCard } from '../../../style/commonstyle/CardStyle';
+import Card from '../../common/Card';
 
 function Theme() {
 	// 슬라이드 설정
