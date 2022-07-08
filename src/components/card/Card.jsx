@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Card({ Img, Title, Content = '', Price, Group, Theme, Package }) {
+function Card({ Img, Title, Content, Price, Group, Theme, Package }) {
 	return (
 		<>
 			<img src={Img} alt={Title} />
