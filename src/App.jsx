@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 // page
 import MainPage from './page/main/MainPage';
 import SearchPage from './page/search/SearchPage';
+import RecommendedListPage from './page/list/RecommendedListPage';
 import GroupListPage from './page/list/GroupListPage';
 import ThemeListPage from './page/list/ThemeListPage';
 import AreaListPage from './page/list/AreaListPage';
@@ -23,6 +24,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<MainPage />} />
 				<Route path="/search" element={<SearchPage />} />
+				<Route path="/recommendedlist" element={<RecommendedListPage />} />
 				<Route path="/grouplist" element={<GroupListPage />} />
 				<Route path="/themelist" element={<ThemeListPage />} />
 				<Route path="/arealist" element={<AreaListPage />} />
