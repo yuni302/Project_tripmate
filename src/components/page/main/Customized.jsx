@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { CustomizedTitle, Box } from '../../../style/CustomizedStyle';
+import { CustomizedTitle, Box } from '../../../style/mainstyle/CustomizedStyle';
 import { NormalCard } from '../../../style/CardStyle';
 import Card from '../../card/Card';
 
