@@ -11,6 +11,7 @@ function Group() {
 
 	const GroupType = GroupList[0].map((data, index) => (
 		<button
+      key={data}
 			type="button"
 			name={data}
 			className={index === 0 ? 'group-btn active' : 'group-btn'}
