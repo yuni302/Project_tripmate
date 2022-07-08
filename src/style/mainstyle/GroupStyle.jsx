@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+	display: flex;
+`;
+export const Box = styled.div`
+	display: block;
+`;
+
 export const MainTitle = styled.p`
 	font-family: 'Pretendard';
 	color: #000000;
@@ -8,11 +15,6 @@ export const MainTitle = styled.p`
 	line-height: 36px;
 	margin: 0 0 30px 0;
 `;
-
-export const Box = styled.div`
-	display: flex;
-`;
-
 export const ButtonGroup = styled.div`
 	display: flex;
 	flex-direction: column;
