@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Box } from '../../../style/GroupStyle';
-import { BasicCard } from '../../../style/CardStyle';
+import { Box } from '../../../style/mainstyle/GroupStyle';
+import { BasicCard } from '../../../style/commonstyle/CardStyle';
 import Card from '../../card/Card';
 
 function GroupFilter({ content }) {
