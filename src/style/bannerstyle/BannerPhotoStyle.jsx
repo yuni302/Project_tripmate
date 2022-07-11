@@ -4,9 +4,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 export const StyledPhoto = styled(Slider)`
-	&,
-	img {
-		width: 1440px;
-		height: 755px;
-	}
+  &,
+  img {
+    width: 1440px;
+    height: 755px;
+  }
 `;

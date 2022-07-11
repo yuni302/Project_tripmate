@@ -17,27 +17,27 @@ import MyPage from './page/mypage/MyPage';
 import KeywordPage from './page/keyword/KeywordPage';
 
 function App() {
-	return (
-		<>
-			<Header />
+  return (
+    <>
+      <Header />
 
-			<Routes>
-				<Route path="/" element={<MainPage />} />
-				<Route path="/search" element={<SearchPage />} />
-				<Route path="/recommendedlist" element={<RecommendedListPage />} />
-				<Route path="/grouplist" element={<GroupListPage />} />
-				<Route path="/themelist" element={<ThemeListPage />} />
-				<Route path="/arealist" element={<AreaListPage />} />
-				<Route path="/list/:id" element={<DetailPage />} />
-				<Route path="/login" element={<LogInPage />} />
-				<Route path="/signup" element={<SignUpPage />} />
-				<Route path="/keyword" element={<KeywordPage />} />
-				<Route path="/mypage" element={<MyPage />} />
-			</Routes>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/recommendedlist" element={<RecommendedListPage />} />
+        <Route path="/grouplist" element={<GroupListPage />} />
+        <Route path="/themelist" element={<ThemeListPage />} />
+        <Route path="/arealist" element={<AreaListPage />} />
+        <Route path="/list/:id" element={<DetailPage />} />
+        <Route path="/login" element={<LogInPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/keyword" element={<KeywordPage />} />
+        <Route path="/mypage" element={<MyPage />} />
+      </Routes>
 
-			<Footer />
-		</>
-	);
+      <Footer />
+    </>
+  );
 }
 
 export default App;

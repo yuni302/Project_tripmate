@@ -7,10 +7,10 @@ import { GlobalStyle } from './style/commonstyle/ResetStyle';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-	<BrowserRouter>
-		<GlobalStyle />
-		<App />
-	</BrowserRouter>
+  <BrowserRouter>
+    <GlobalStyle />
+    <App />
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
