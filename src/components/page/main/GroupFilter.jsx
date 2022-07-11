@@ -4,38 +4,38 @@ import { Box } from '../../../style/mainstyle/GroupStyle';
 import { GroupCard } from '../../../style/commonstyle/CardStyle';
 import Card from '../../card/Card';
 
-function GroupFilter({ content }) {
-	const [item, setItem] = useState([]);
+const GroupFilter = ({ content }) => {
+  const [item, setItem] = useState([]);
 
-	useEffect(() => {
-		axios.get('https://bobbykjh.github.io/card.json').then((res) => setItem(res.data));
-	}, []);
+  useEffect(() => {
+    axios.get('https://bobbykjh.github.io/card.json').then((res) => setItem(res.data));
+  }, []);
 
-	function randomItem(array) {
-		array.sort(() => Math.random() - 0.5);
-	}
-	randomItem(item);
+  function randomItem(array) {
+    array.sort(() => Math.random() - 0.5);
+  }
+  randomItem(item);
 
-	return (
-		<Box>
-			{item
-				.filter((res) => res.group === content)
-				.slice(0, 3)
-				.map((res) => (
-					<GroupCard key={res.id}>
-						<Card
-							Img={res.img}
-							Title={res.name}
-							Content={res.content}
-							Price={res.price}
-							Group={res.group}
-							Theme={res.theme}
-							Package={res.package}
-						/>
-					</GroupCard>
-				))}
-		</Box>
-	);
-}
+  return (
+    <Box>
+      {item
+        .filter((res) => res.group === content)
+        .slice(0, 3)
+        .map((res) => (
+          <GroupCard key={res.id}>
+            <Card
+              Img={res.img}
+              Title={res.name}
+              Content={res.content}
+              Price={res.price}
+              Group={res.group}
+              Theme={res.theme}
+              Package={res.package}
+            />
+          </GroupCard>
+        ))}
+    </Box>
+  );
+};
 
 export default GroupFilter;

@@ -1,7 +1,5 @@
 import React from 'react';
 
-function ThemeListPage() {
-	return <div>ThemeListPage</div>;
-}
+const ThemeListPage = () => <div>ThemeListPage</div>;
 
 export default ThemeListPage;

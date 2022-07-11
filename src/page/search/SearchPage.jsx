@@ -1,7 +1,5 @@
 import React from 'react';
 
-function SearchPage() {
-	return <div>SearchPage</div>;
-}
+const SearchPage = () => <div>SearchPage</div>;
 
 export default SearchPage;
