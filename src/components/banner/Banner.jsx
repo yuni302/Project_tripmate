@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { StyledPhoto } from '../../style/bannerstyle/BannerPhotoStyle';
 import { StyledSlider } from '../../style/bannerstyle/BannerTextStyle';
 
-function Banner() {
+const Banner = () => {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [slider1, setSlider1] = useState(null);
@@ -60,5 +60,5 @@ function Banner() {
       </StyledPhoto>
     </>
   );
-}
+};
 export default Banner;

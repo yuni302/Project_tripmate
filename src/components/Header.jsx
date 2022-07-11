@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from '../img/HeaderLogo.svg';
 import { HeaderStyle } from '../style/HeaderStyle';
 import MobileHeader from './MobileHeader';
 
-function Header() {
+const Header = () => {
   const [scroll, setScroll] = useState(0);
   const [mode, setMode] = useState(window.innerWidth);
   const [fixed, setFixed] = useState('relative');
@@ -110,6 +110,6 @@ function Header() {
       )}
     </div>
   );
-}
+};
 
 export default Header;

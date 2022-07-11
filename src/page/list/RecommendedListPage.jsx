@@ -1,7 +1,5 @@
 import React from 'react';
 
-function RecommendedListPage() {
-  return <div>RecommendedListPage</div>;
-}
+const RecommendedListPage = () => <div>RecommendedListPage</div>;
 
 export default RecommendedListPage;

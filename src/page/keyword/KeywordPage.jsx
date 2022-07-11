@@ -1,7 +1,5 @@
 import React from 'react';
 
-function KeywordPage() {
-  return <div>KeywordPage</div>;
-}
+const KeywordPage = () => <div>KeywordPage</div>;
 
 export default KeywordPage;

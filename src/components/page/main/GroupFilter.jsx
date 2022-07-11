@@ -4,7 +4,7 @@ import { Box } from '../../../style/mainstyle/GroupStyle';
 import { GroupCard } from '../../../style/commonstyle/CardStyle';
 import Card from '../../card/Card';
 
-function GroupFilter({ content }) {
+const GroupFilter = ({ content }) => {
   const [item, setItem] = useState([]);
 
   useEffect(() => {
@@ -36,6 +36,6 @@ function GroupFilter({ content }) {
         ))}
     </Box>
   );
-}
+};
 
 export default GroupFilter;

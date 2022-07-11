@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MainTitle, ButtonGroup, CardList, Box } from '../../../style/mainstyle/GroupStyle';
 import GroupFilter from './GroupFilter';
 
-function Group() {
+const Group = () => {
   const [content, setContent] = useState('2030');
   const GroupList = [
     ['2030', '4050', '6070', '여자끼리', '남자끼리', '자녀동반'],
@@ -38,6 +38,6 @@ function Group() {
       </Box>
     </>
   );
-}
+};
 
 export default Group;

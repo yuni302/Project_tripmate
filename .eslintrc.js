@@ -19,5 +19,6 @@ module.exports = {
     'linebreak-style': ['error', require('os').EOL === '\r\n' ? 'windows' : 'unix'],
     'import/prefer-default-export': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
   },
 };

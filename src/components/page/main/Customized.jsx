@@ -4,7 +4,7 @@ import { CustomizedTitle, Box } from '../../../style/mainstyle/CustomizedStyle';
 import { NormalCard } from '../../../style/CardStyle';
 import Card from '../../card/Card';
 
-function Customized() {
+const Customized = () => {
   const name = 'login';
   const [item, setItem] = useState([]);
 
@@ -37,6 +37,6 @@ function Customized() {
       </Box>
     </>
   );
-}
+};
 
 export default Customized;

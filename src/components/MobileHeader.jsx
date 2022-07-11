@@ -7,7 +7,7 @@ import { ReactComponent as User } from '../img/User.svg';
 import { ReactComponent as Shopping } from '../img/ShoppingBag.svg';
 import { ReactComponent as Search } from '../img/Search.svg';
 
-function MobileHeader() {
+const MobileHeader = () => {
   const [scroll, setScroll] = useState(0);
   const [fixed, setFixed] = useState('relative');
 
@@ -110,6 +110,6 @@ function MobileHeader() {
       </header>
     </MobileHeaderStyle>
   );
-}
+};
 
 export default MobileHeader;

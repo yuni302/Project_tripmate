@@ -5,7 +5,7 @@ import { ThemeSlider } from '../../../style/mainstyle/ThemeStyle';
 import { NormalCard } from '../../../style/commonstyle/CardStyle';
 import Card from '../../common/Card';
 
-function Theme() {
+const Theme = () => {
   // 슬라이드 설정
   const settings = {
     className: 'center',
@@ -48,6 +48,6 @@ function Theme() {
       </ThemeSlider>
     </>
   );
-}
+};
 
 export default Theme;
