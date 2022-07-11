@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  width: 1440px;
+  margin: 0 auto;
+`;
+export const Section = styled.div`
   display: flex;
 `;
 export const Box = styled.div`
