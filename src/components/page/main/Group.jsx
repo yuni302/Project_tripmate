@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MainTitle, ButtonGroup, CardList, Box } from '../../../style/mainstyle/GroupStyle';
+import { MainTitle, ButtonGroup, CardList, Section, Container } from '../../../style/mainstyle/GroupStyle';
 import GroupFilter from './GroupFilter';
 
 const Group = () => {
@@ -28,15 +28,15 @@ const Group = () => {
   ));
 
   return (
-    <>
+    <Container>
       <MainTitle>고투게더가 추천하는 그룹별 상품이에요</MainTitle>
-      <Box>
+      <Section>
         <ButtonGroup>{GroupType}</ButtonGroup>
         <CardList>
           <GroupFilter content={content} />
         </CardList>
-      </Box>
-    </>
+      </Section>
+    </Container>
   );
 };
 
