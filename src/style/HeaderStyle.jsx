@@ -106,7 +106,7 @@ export const HeaderStyle = styled.div`
 				font-size: 16px;
 				transition: 0.5s;
 				padding: 20px 0;
-				background-color: #ffffff;
+				background-color: #ffffff90;
 				color: #1b1b1b;
 				cursor: pointer;
 				&:last-child {
