@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { MainTitle } from '../../../style/mainstyle/GroupStyle';
+import { MainTitle, Section } from '../../../style/mainstyle/GroupStyle';
 import { ThemeSlider } from '../../../style/mainstyle/ThemeStyle';
 import { NormalCard } from '../../../style/commonstyle/CardStyle';
 import Card from '../../common/Card';
@@ -30,7 +30,7 @@ const Theme = () => {
   randomItem(item);
 
   return (
-    <>
+    <Section>
       <MainTitle>이런 테마여행은 어떠세요?</MainTitle>
       <ThemeSlider {...settings}>
         {item.slice(0, 8).map((res) => (
@@ -46,7 +46,7 @@ const Theme = () => {
           </NormalCard>
         ))}
       </ThemeSlider>
-    </>
+    </Section>
   );
 };
 
