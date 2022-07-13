@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { MainTitle, Container } from '../../../style/mainstyle/GroupStyle';
 import { ThemeSlider } from '../../../style/mainstyle/ThemeStyle';
 import { NormalCard } from '../../../style/commonstyle/CardStyle';
@@ -21,7 +22,9 @@ const Theme = () => {
   const [item, setItem] = useState([]);
 
   useEffect(() => {
-    axios.get('https://bobbykjh.github.io/card.json').then((res) => setItem(res.data));
+    axios.post('https://stfe-gotogether.herokuapp.com/product/a/getList').then((res) => {
+      setItem(res.data.productList);
+    });
   }, []);
 
   function randomItem(array) {
@@ -34,16 +37,18 @@ const Theme = () => {
       <MainTitle>이런 테마여행은 어떠세요?</MainTitle>
       <ThemeSlider {...settings}>
         {item.slice(0, 8).map((res) => (
-          <NormalCard key={res.id}>
-            <Card
-              Img={res.img}
-              Title={res.name}
-              Price={res.price}
-              Group={res.group}
-              Theme={res.theme}
-              Package={res.package}
-            />
-          </NormalCard>
+          <Link to={`/list/${res.productNum}`}>
+            <NormalCard key={res.productNum}>
+              <Card
+                Img={res.image[0]}
+                Title={res.title}
+                Price={res.price}
+                Group={res.group}
+                Theme={res.theme}
+                Style={res.style}
+              />
+            </NormalCard>
+          </Link>
         ))}
       </ThemeSlider>
     </Container>
