@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Box } from '../../../style/mainstyle/GroupStyle';
 import { GroupCard } from '../../../style/commonstyle/CardStyle';
-import Card from '../../card/Card';
+import Card from '../../common/Card';
 
 const GroupFilter = ({ content }) => {
   const [item, setItem] = useState([]);
