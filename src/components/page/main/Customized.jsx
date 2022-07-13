@@ -1,8 +1,8 @@
 import axios from 'axios';
+import Card from 'components/common/Card';
 import React, { useState, useEffect } from 'react';
-import { CustomizedTitle, Box } from '../../../style/mainstyle/CustomizedStyle';
-import { NormalCard } from '../../../style/CardStyle';
-import Card from '../../card/Card';
+import { NormalCard } from 'style/commonStyle/CardStyle';
+import { Box, CustomizedTitle } from 'style/mainStyle/CustomizedStyle';
 
 const Customized = () => {
   const name = 'login';

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MainTitle, ButtonGroup, CardList, Section, Container } from '../../../style/mainstyle/GroupStyle';
+import { ButtonGroup, CardList, Container, MainTitle, Section } from 'style/mainStyle/GroupStyle';
 import GroupFilter from './GroupFilter';
 
 const Group = () => {

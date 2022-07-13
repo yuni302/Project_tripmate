@@ -1,20 +1,20 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 // components
-import Header from './components/Header';
-import Footer from './components/Footer';
+import MainPage from 'page/main/MainPage';
+import SearchPage from 'page/search/SearchPage';
+import RecommendedListPage from 'page/list/RecommendedListPage';
+import ThemeListPage from 'page/list/ThemeListPage';
+import AreaListPage from 'page/list/AreaListPage';
+import DetailPage from 'page/product/DetailPage';
+import SignUpPage from 'page/sign/SignUpPage';
+import KeywordPage from 'page/keyword/KeywordPage';
+import MyPage from 'page/mypage/MyPage';
+import Footer from 'components/common/Footer';
+import Header from 'components/common/Header';
+import GroupListPage from 'page/list/GroupListPage';
+import LogInPage from 'page/sign/LogInPage';
 // page
-import MainPage from './page/main/MainPage';
-import SearchPage from './page/search/SearchPage';
-import RecommendedListPage from './page/list/RecommendedListPage';
-import GroupListPage from './page/list/GroupListPage';
-import ThemeListPage from './page/list/ThemeListPage';
-import AreaListPage from './page/list/AreaListPage';
-import DetailPage from './page/detail/DetailPage';
-import LogInPage from './page/sign/LogInPage';
-import SignUpPage from './page/sign/SignUpPage';
-import MyPage from './page/mypage/MyPage';
-import KeywordPage from './page/keyword/KeywordPage';
 
 const App = () => (
   <>

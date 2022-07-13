@@ -1,9 +1,9 @@
 import React from 'react';
-import Youtube from '../img/Youtube.svg';
-import Facebook from '../img/Facebook.svg';
-import Instagram from '../img/Instagram.svg';
-import Logo from '../img/FooterLogo.svg';
-import { FooterStyle } from '../style/FooterStyle';
+import Youtube from 'img/Youtube.svg';
+import Facebook from 'img/Facebook.svg';
+import Instagram from 'img/Instagram.svg';
+import Logo from 'img/FooterLogo.svg';
+import { FooterStyle } from 'style/commonStyle/FooterStyle';
 
 const Footer = () => (
   <FooterStyle>

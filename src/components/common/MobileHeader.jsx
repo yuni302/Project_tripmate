@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MobileHeaderStyle } from '../style/HeaderStyle';
-import { ReactComponent as Mobile } from '../img/MobileLogo.svg';
-import { ReactComponent as Login } from '../img/LogIn.svg';
-import { ReactComponent as User } from '../img/User.svg';
-import { ReactComponent as Shopping } from '../img/ShoppingBag.svg';
-import { ReactComponent as Search } from '../img/Search.svg';
+import { MobileHeaderStyle } from 'style/commonStyle/HeaderStyle';
+import { ReactComponent as Mobile } from 'img/MobileLogo.svg';
+import { ReactComponent as Login } from 'img/LogIn.svg';
+import { ReactComponent as User } from 'img/User.svg';
+import { ReactComponent as Shopping } from 'img/ShoppingBag.svg';
+import { ReactComponent as Search } from 'img/Search.svg';
 
 const MobileHeader = () => {
   const [scroll, setScroll] = useState(0);

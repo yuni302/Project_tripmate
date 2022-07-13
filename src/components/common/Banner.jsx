@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { StyledPhoto } from '../../style/bannerstyle/BannerPhotoStyle';
-import { StyledSlider } from '../../style/bannerstyle/BannerTextStyle';
+import { StyledPhoto } from 'style/commonStyle/BannerPhotoStyle';
+import { StyledSlider } from 'style/commonStyle/BannerTextStyle';
 
 const Banner = () => {
   const [nav1, setNav1] = useState(null);

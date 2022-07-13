@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { MainTitle, Container } from '../../../style/mainstyle/GroupStyle';
-import { ThemeSlider } from '../../../style/mainstyle/ThemeStyle';
-import { NormalCard } from '../../../style/commonstyle/CardStyle';
-import Card from '../../common/Card';
+import { MainTitle, Container } from 'style/mainStyle/GroupStyle';
+import { ThemeSlider } from 'style/mainStyle/ThemeStyle';
+import { NormalCard } from 'style/commonStyle/CardStyle';
+import Card from 'common/Card';
 
 const Theme = () => {
   // 슬라이드 설정
