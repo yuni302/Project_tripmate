@@ -1,9 +1,9 @@
 import styled, { keyframes } from 'styled-components';
 
-const Appear = keyframes`
+const AppearY = keyframes`
 	0%{
 		opacity: 0;
-		margin-top: 100px;
+		margin-top: 50px;
 	}
 	100%{
 		opacity: 1;
@@ -11,9 +11,20 @@ const Appear = keyframes`
 	}
 `;
 
+const AppearX = keyframes`
+	0%{
+		opacity: 0;
+		margin-left: 50px;
+	}
+	100%{
+		opacity: 1;
+		margin-left: 0;
+	}
+`;
+
 // 맞춤 테마 카드 title 2줄 content 안들어감
 export const NormalCard = styled.div`
-  animation: ${Appear} 1s;
+  animation: ${AppearY} 1s;
   display: inline-block;
   width: 302px;
   vertical-align: top;
@@ -70,6 +81,8 @@ export const NormalCard = styled.div`
 
 // 그룹 카드 2 1
 export const GroupCard = styled(NormalCard)`
+  animation: ${AppearX} 1s;
+
   width: 336px;
   border: 1px solid #ececec;
   border-radius: 8px;
@@ -98,7 +111,7 @@ export const GroupCard = styled(NormalCard)`
     -webkit-line-clamp: 1;
     word-wrap: break-word; // ...
     -webkit-box-orient: vertical;
-    color: #888;
+    color: #1b1b1b;
     font-size: 18px;
     font-weight: 400;
     line-height: 21px;
@@ -188,5 +201,19 @@ export const RelatedCard = styled(NormalCard)`
   .price {
     margin-top: 10px;
     margin-bottom: 20px;
+  }
+  @media (max-width: 992px) {
+    width: 90%;
+    height: 218px;
+    display: inline-flex;
+    margin: 6px 0;
+    img {
+      width: 200px;
+      height: 218px;
+    }
+    div {
+      padding: 10px;
+      margin: 0;
+    }
   }
 `;
