@@ -1,14 +1,17 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Box } from '../../../style/mainstyle/GroupStyle';
 import { GroupCard } from '../../../style/commonstyle/CardStyle';
-import Card from '../../card/Card';
+import Card from '../../common/Card';
 
 const GroupFilter = ({ content }) => {
   const [item, setItem] = useState([]);
 
   useEffect(() => {
-    axios.get('https://bobbykjh.github.io/card.json').then((res) => setItem(res.data));
+    axios.post('https://stfe-gotogether.herokuapp.com/product/a/getList').then((res) => {
+      setItem(res.data.productList);
+    });
   }, []);
 
   function randomItem(array) {
@@ -22,17 +25,19 @@ const GroupFilter = ({ content }) => {
         .filter((res) => res.group === content)
         .slice(0, 3)
         .map((res) => (
-          <GroupCard key={res.id}>
-            <Card
-              Img={res.img}
-              Title={res.name}
-              Content={res.content}
-              Price={res.price}
-              Group={res.group}
-              Theme={res.theme}
-              Package={res.package}
-            />
-          </GroupCard>
+          <Link to={`/list/${res.productNum}`}>
+            <GroupCard key={res.productNum}>
+              <Card
+                Img={res.image[0]}
+                Title={res.title}
+                Content={res.contents}
+                Price={res.price}
+                Group={res.group}
+                Theme={res.theme}
+                Style={res.style}
+              />
+            </GroupCard>
+          </Link>
         ))}
     </Box>
   );

@@ -5,7 +5,7 @@ import GroupFilter from './GroupFilter';
 const Group = () => {
   const [content, setContent] = useState('2030');
   const GroupList = [
-    ['2030', '4050', '6070', '여자끼리', '남자끼리', '자녀동반'],
+    ['2030', '4050', '6070', 'female', 'male', 'family'],
     ['2030끼리', '4050끼리', '6070끼리', '여자끼리', '남자끼리', '자녀동반'],
   ];
 
