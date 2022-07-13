@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../img/HeaderLogo.svg';
-import { HeaderStyle } from '../style/HeaderStyle';
+import { ReactComponent as HeaderLogo } from 'img/HeaderLogo.svg';
+import { HeaderStyle } from 'style/commonStyle/HeaderStyle';
 import MobileHeader from './MobileHeader';
 
 const Header = () => {
@@ -56,7 +56,7 @@ const Header = () => {
           <header id="header" style={{ position: fixed }}>
             <h1>
               <Link to="/">
-                <Logo />
+                <HeaderLogo />
               </Link>
             </h1>
             <ul className="content">

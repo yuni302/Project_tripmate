@@ -1,9 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Box } from '../../../style/mainstyle/GroupStyle';
-import { GroupCard } from '../../../style/commonstyle/CardStyle';
-import Card from '../../common/Card';
+import { Box } from 'style/mainStyle/GroupStyle';
+import { GroupCard } from 'style/commonStyle/CardStyle';
+import Card from 'components/common/Card';
 
 const GroupFilter = ({ content }) => {
   const [item, setItem] = useState([]);

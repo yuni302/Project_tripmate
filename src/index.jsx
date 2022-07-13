@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { GlobalStyle } from 'style/commonStyle/ResetStyle';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { GlobalStyle } from './style/commonstyle/ResetStyle';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
