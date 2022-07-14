@@ -18,6 +18,10 @@ const content = [
 ];
 const NAV_HEIGHT = 61;
 
+const body = {
+  productNum: 35,
+};
+
 const Detail = () => {
   const contentRef = useRef([]);
   const [scrollY, setScrollY] = useState(0);
@@ -27,9 +31,15 @@ const Detail = () => {
   const [infoImg, setInfoImg] = useState([]);
 
   useEffect(() => {
-    axios.get('https://raw.githubusercontent.com/Hungeun2/trip-data/main/sea2.json').then((res) => {
-      setInfoImg(res.data[0].image);
-    });
+    const getImage = async () => {
+      try {
+        const res = await axios.post('https://stfe-gotogether.herokuapp.com/product/a/getDetail', body);
+        setInfoImg(res.data.productObj.image);
+      } catch (err) {
+        console.error('Error : ', err);
+      }
+    };
+    getImage();
   }, []);
 
   useEffect(() => {
@@ -89,7 +99,7 @@ const Detail = () => {
       </div>
       <NavStyle className="detail-nav" fix={headFix}>
         {content.map((data, index) => (
-          <button type="button" className={`button ${data[0]}`} onClick={() => moveToTarget(index)}>
+          <button type="button" key={data[0]} className={`button ${data[0]}`} onClick={() => moveToTarget(index)}>
             {data[1]}
           </button>
         ))}
