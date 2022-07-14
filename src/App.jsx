@@ -1,6 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 // components
+import Header from 'components/common/Header';
+import Footer from 'components/common/Footer';
+// page
 import MainPage from 'page/main/MainPage';
 import SearchPage from 'page/search/SearchPage';
 import RecommendedListPage from 'page/list/RecommendedListPage';
@@ -10,11 +13,8 @@ import DetailPage from 'page/product/DetailPage';
 import SignUpPage from 'page/sign/SignUpPage';
 import KeywordPage from 'page/keyword/KeywordPage';
 import MyPage from 'page/mypage/MyPage';
-import Footer from 'components/common/Footer';
-import Header from 'components/common/Header';
 import GroupListPage from 'page/list/GroupListPage';
 import LogInPage from 'page/sign/LogInPage';
-// page
 
 const App = () => (
   <>
@@ -27,7 +27,7 @@ const App = () => (
       <Route path="/grouplist" element={<GroupListPage />} />
       <Route path="/themelist" element={<ThemeListPage />} />
       <Route path="/arealist" element={<AreaListPage />} />
-      <Route path="/list/:id" element={<DetailPage />} />
+      <Route path="/list/:productNum" element={<DetailPage />} />
       <Route path="/login" element={<LogInPage />} />
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/keyword" element={<KeywordPage />} />
