@@ -10,13 +10,16 @@ import { ReactComponent as Search } from 'img/Search.svg';
 const MobileHeader = () => {
   const [scroll, setScroll] = useState(0);
   const [fixed, setFixed] = useState('relative');
+  const [distance, setDistance] = useState('0px');
 
   const handleScroll = () => {
     if (scroll > 78) {
       setScroll(window.pageYOffset);
+      setDistance('34px');
       setFixed('fixed');
     } else {
       setScroll(window.pageYOffset);
+      setDistance('0px');
       setFixed('relative');
     }
   };
@@ -33,42 +36,45 @@ const MobileHeader = () => {
 
   return (
     <MobileHeaderStyle>
-      <header className="header">
-        <div>
+      <div style={{ marginBottom: distance }}>
+        <header className="header">
           <div>
-            <Link to="/search">
-              <Search />
+            <div>
+              <Link to="/search">
+                <Search />
+              </Link>
+            </div>
+            <div>
+              <Shopping />
+            </div>
+          </div>
+          <h1>
+            <Link to="/">
+              <Mobile />
             </Link>
-          </div>
+          </h1>
           <div>
-            <Shopping />
+            <div>
+              <Link to="/login">
+                <Login />
+              </Link>
+            </div>
+            <div>
+              <Link to="/mypage">
+                <User />
+              </Link>
+            </div>
           </div>
-        </div>
-        <h1>
-          <Link to="/">
-            <Mobile />
-          </Link>
-        </h1>
-        <div>
-          <div>
-            <Link to="/login">
-              <Login />
-            </Link>
-          </div>
-          <div>
-            <Link to="/mypage">
-              <User />
-            </Link>
-          </div>
-        </div>
-      </header>
+        </header>
+      </div>
+
       <header id="header" style={{ position: fixed }}>
-        <p className="content">
+        <ul className="content">
           <Link to="/recommendedlist">
             <span>추천 여행 상품</span>
           </Link>
-        </p>
-        <p className="content">
+        </ul>
+        <ul className="content">
           <Link to="/grouplist">
             <span>그룹별 여행</span>
           </Link>
@@ -78,8 +84,8 @@ const MobileHeader = () => {
           <nav>여자끼리</nav>
           <nav>남자끼리</nav>
           <nav>자녀동반</nav>
-        </p>
-        <p className="content">
+        </ul>
+        <ul className="content">
           <Link to="/themelist">
             <span>테마별 여행</span>
           </Link>
@@ -88,8 +94,8 @@ const MobileHeader = () => {
           <nav>골프여행</nav>
           <nav>트레킹</nav>
           <nav>성지순례</nav>
-        </p>
-        <p className="content">
+        </ul>
+        <ul className="content">
           <Link to="/arealist">
             <span>지역별 여행</span>
           </Link>
@@ -99,14 +105,14 @@ const MobileHeader = () => {
           <nav>유럽/코카서스</nav>
           <nav>중남미/북미</nav>
           <nav>대만/중국/일본</nav>
-        </p>
-        <p className="content info">
+        </ul>
+        <ul className="content info">
           <span>고객 센터</span>
           <nav>공지사항</nav>
           <nav>자주 묻는 질문</nav>
           <nav>1:1 문의</nav>
           <nav>단체 문의</nav>
-        </p>
+        </ul>
       </header>
     </MobileHeaderStyle>
   );
