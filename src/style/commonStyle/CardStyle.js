@@ -22,9 +22,9 @@ const AppearX = keyframes`
 	}
 `;
 
-// 맞춤 테마 카드 title 2줄 content 안들어감
+// 맞춤 테마 카드
 export const NormalCard = styled.div`
-  animation: ${AppearY} 1s;
+  animation: ${AppearY} 0.5s;
   display: inline-block;
   width: 302px;
   vertical-align: top;
@@ -75,13 +75,14 @@ export const NormalCard = styled.div`
   .price {
     color: #000;
     font-size: 20px;
+    font-weight: 600;
     margin-top: 10px;
   }
 `;
 
-// 그룹 카드 2 1
+// 그룹 카드
 export const GroupCard = styled(NormalCard)`
-  animation: ${AppearX} 1s;
+  animation: ${AppearX} 0.5s;
 
   width: 336px;
   border: 1px solid #ececec;
@@ -151,7 +152,7 @@ export const NewsCard = styled(NormalCard)`
     -webkit-line-clamp: 3;
     word-wrap: break-word; // ...
     -webkit-box-orient: vertical;
-    font-weight: 400;
+    font-weight: 500;
   }
   .hash-tag {
     display: none;
