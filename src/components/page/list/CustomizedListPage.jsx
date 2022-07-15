@@ -8,8 +8,12 @@ const CustomizedListPage = ({ content }) => {
 
   useEffect(() => {
     const get = async () => {
-      const res = await axios.post('https://stfe-gotogether.herokuapp.com/product/a/getList');
-      setItem(res.data.productList);
+      try {
+        const res = await axios.post('https://stfe-gotogether.herokuapp.com/product/a/getList');
+        setItem(res.data.productList);
+      } catch (err) {
+        console.error('Error : ', err);
+      }
     };
     get();
   }, []);
@@ -24,13 +28,13 @@ const CustomizedListPage = ({ content }) => {
             // <Link to={`/list/${res.productNum}`}>
             <ListCard key={res.productNum}>
               <Card
-                Img={res.image[0]}
-                Title={res.title}
-                Content={res.contents}
-                Price={res.price}
-                Group={res.group}
-                Theme={res.theme}
-                Style={res.style}
+                img={res.image[0]}
+                title={res.title}
+                content={res.contents}
+                price={res.price}
+                group={res.group}
+                theme={res.theme}
+                style={res.style}
               />
             </ListCard>
             // </Link>
