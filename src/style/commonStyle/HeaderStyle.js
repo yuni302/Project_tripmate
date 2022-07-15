@@ -22,6 +22,10 @@ export const HeaderStyle = styled.div`
     margin: 0;
     border-top: 1px solid #d9d9d9;
   }
+  div {
+    ${({ distance }) => (distance ? `margin-bottom:0px;` : `margin-bottom:58px;`)}
+  }
+
   .header {
     display: flex;
     width: 100%;
@@ -57,6 +61,7 @@ export const HeaderStyle = styled.div`
     background-color: #ffffff90;
     transition: 1s;
     top: 0;
+    ${({ distance }) => (distance ? `position: relative;` : `position: fixed;`)}
     &:hover {
       background-color: #fff;
     }
@@ -150,10 +155,14 @@ export const MobileHeaderStyle = styled(HeaderStyle)`
       }
     }
   }
+  .mobile {
+    ${({ mobile }) => (mobile ? `margin-bottom:0px;` : `margin-bottom:34px;`)}
+  }
   #header {
     justify-content: center;
     align-items: center;
     max-width: 992px;
+    ${({ mobile }) => (mobile ? `position:relative;` : `position:fixed;`)}
     .content {
       max-height: 34px;
       width: 20%;
