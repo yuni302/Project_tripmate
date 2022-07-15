@@ -8,14 +8,17 @@ const Header = () => {
   const [scroll, setScroll] = useState(0);
   const [mode, setMode] = useState(window.innerWidth);
   const [fixed, setFixed] = useState('relative');
+  const [distance, setDistance] = useState('0px');
 
   // 스크롤 위치에 따른 position 변경
   const handleScroll = () => {
     if (scroll > 118) {
       setScroll(window.pageYOffset);
+      setDistance('58px');
       setFixed('fixed');
     } else {
       setScroll(window.pageYOffset);
+      setDistance('0px');
       setFixed('relative');
     }
   };
@@ -42,15 +45,18 @@ const Header = () => {
       {/* 화면전환 */}
       {mode > 992 ? (
         <HeaderStyle>
-          <header className="header">
-            <p className="myPage">
-              <Link to="/login">로그인</Link>
-            </p>
-            <p className="myPage">장바구니</p>
-            <p className="myPage">
-              <Link to="/mypage">마이페이지</Link>
-            </p>
-          </header>
+          <div style={{ marginBottom: distance }}>
+            <header className="header">
+              <p className="myPage">
+                <Link to="/login">로그인</Link>
+              </p>
+              <p className="myPage">장바구니</p>
+              <p className="myPage">
+                <Link to="/mypage">마이페이지</Link>
+              </p>
+            </header>
+          </div>
+
           <hr />
 
           <header id="header" style={{ position: fixed }}>
