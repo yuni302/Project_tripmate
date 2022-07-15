@@ -1,5 +1,10 @@
 import React from 'react';
+import InfoDetail from 'components/page/product/InfoDetail';
 
-const DetailPage = () => <div>DetailPage</div>;
+const DetailPage = () => (
+  <div>
+    <InfoDetail />
+  </div>
+);
 
 export default DetailPage;
