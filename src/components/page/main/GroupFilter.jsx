@@ -8,16 +8,26 @@ import Card from 'components/common/Card';
 const GroupFilter = ({ content }) => {
   const [item, setItem] = useState([]);
 
+  const randomItem = (array) => {
+    array.sort(() => Math.random() - 0.5);
+    return array;
+  };
+
   useEffect(() => {
-    axios.post('https://stfe-gotogether.herokuapp.com/product/a/getList').then((res) => {
-      setItem(res.data.productList);
-    });
+    const get = async () => {
+      try {
+        const res = await axios.post('https://stfe-gotogether.herokuapp.com/product/a/getList');
+        setItem(randomItem(res.data.productList));
+      } catch (err) {
+        console.error('Error : ', err);
+      }
+    };
+    get();
   }, []);
 
-  function randomItem(array) {
-    array.sort(() => Math.random() - 0.5);
-  }
-  randomItem(item);
+  useEffect(() => {
+    setItem(randomItem(item));
+  }, [content]);
 
   return (
     <Box>
@@ -25,16 +35,16 @@ const GroupFilter = ({ content }) => {
         .filter((res) => res.group === content)
         .slice(0, 3)
         .map((res) => (
-          <Link to={`/list/${res.productNum}`}>
+          <Link to={`/list/${res.productNum}`} key={res.productNum}>
             <GroupCard key={res.productNum}>
               <Card
-                Img={res.image[0]}
-                Title={res.title}
-                Content={res.contents}
-                Price={res.price}
-                Group={res.group}
-                Theme={res.theme}
-                Style={res.style}
+                img={res.image[0]}
+                title={res.title}
+                content={res.contents}
+                price={res.price}
+                group={res.group}
+                theme={res.theme}
+                style={res.style}
               />
             </GroupCard>
           </Link>
