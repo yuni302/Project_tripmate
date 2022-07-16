@@ -36,7 +36,7 @@ const GroupFilter = ({ content }) => {
         .slice(0, 3)
         .map((res) => (
           <Link to={`/list/${res.productNum}`} key={res.productNum}>
-            <GroupCard key={res.productNum}>
+            <GroupCard>
               <Card
                 img={res.image[0]}
                 title={res.title}
