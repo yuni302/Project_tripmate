@@ -1,4 +1,5 @@
 import React from 'react';
+import { groupList, styleList, themeList } from 'utils';
 
 const Card = ({ img, title, content, price, group, theme, style }) => {
   // 가격
@@ -8,9 +9,9 @@ const Card = ({ img, title, content, price, group, theme, style }) => {
     <>
       <img src={img} alt={title} />
       <div>
-        <span className="hash-tag">{group}</span>
-        <span className="hash-tag">{theme}</span>
-        <span className="hash-tag">{style}</span>
+        <span className="hash-tag">{groupList(group)}</span>
+        <span className="hash-tag">{themeList(theme)}</span>
+        <span className="hash-tag">{styleList(style)}</span>
         {/* 제목 */}
         <p className="title">{title}</p>
         {/* 내용 */}
