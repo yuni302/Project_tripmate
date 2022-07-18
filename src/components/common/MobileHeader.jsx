@@ -9,18 +9,15 @@ import { ReactComponent as Search } from 'img/Search.svg';
 
 const MobileHeader = () => {
   const [scroll, setScroll] = useState(0);
-  const [fixed, setFixed] = useState('relative');
-  const [distance, setDistance] = useState('0px');
+  const [mobile, setDistance] = useState(false);
 
   const handleScroll = () => {
     if (scroll > 78) {
       setScroll(window.pageYOffset);
-      setDistance('34px');
-      setFixed('fixed');
+      setDistance(false);
     } else {
       setScroll(window.pageYOffset);
-      setDistance('0px');
-      setFixed('relative');
+      setDistance(true);
     }
   };
 
@@ -32,11 +29,11 @@ const MobileHeader = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     }; //  window 에서 스크롤을 감시를 종료
-  });
+  }, [scroll, mobile]);
 
   return (
-    <MobileHeaderStyle>
-      <div style={{ marginBottom: distance }}>
+    <MobileHeaderStyle mobile={mobile}>
+      <div className="mobile">
         <header className="header">
           <div>
             <div>
@@ -68,7 +65,7 @@ const MobileHeader = () => {
         </header>
       </div>
 
-      <header id="header" style={{ position: fixed }}>
+      <header id="header">
         <ul className="content">
           <Link to="/recommendedlist">
             <span>추천 여행 상품</span>

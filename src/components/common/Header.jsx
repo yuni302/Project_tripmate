@@ -7,19 +7,16 @@ import MobileHeader from './MobileHeader';
 const Header = () => {
   const [scroll, setScroll] = useState(0);
   const [mode, setMode] = useState(window.innerWidth);
-  const [fixed, setFixed] = useState('relative');
-  const [distance, setDistance] = useState('0px');
+  const [distance, setDistance] = useState(true);
 
   // 스크롤 위치에 따른 position 변경
   const handleScroll = () => {
     if (scroll > 118) {
       setScroll(window.pageYOffset);
-      setDistance('58px');
-      setFixed('fixed');
+      setDistance(false);
     } else {
       setScroll(window.pageYOffset);
-      setDistance('0px');
-      setFixed('relative');
+      setDistance(true);
     }
   };
 
@@ -38,14 +35,14 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleMode);
     };
-  }, [scroll, mode, fixed]);
+  }, [scroll, mode, distance]);
 
   return (
     <div>
       {/* 화면전환 */}
       {mode > 992 ? (
-        <HeaderStyle>
-          <div style={{ marginBottom: distance }}>
+        <HeaderStyle distance={distance}>
+          <div>
             <header className="header">
               <p className="myPage">
                 <Link to="/login">로그인</Link>
@@ -59,7 +56,7 @@ const Header = () => {
 
           <hr />
 
-          <header id="header" style={{ position: fixed }}>
+          <header id="header">
             <h1>
               <Link to="/">
                 <HeaderLogo />
