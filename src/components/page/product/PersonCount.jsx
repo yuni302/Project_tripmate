@@ -14,6 +14,7 @@ const PersonCount = ({ isDisable, title, price, count, setCount }) => {
       setCount((prevCount) => prevCount - 1);
     }
   };
+
   return (
     <PersonBox>
       <div>
@@ -22,11 +23,11 @@ const PersonCount = ({ isDisable, title, price, count, setCount }) => {
       </div>
 
       <CountBox>
-        <button type="button" className={isDisable ? null : 'non'}>
+        <button type="button" className={isDisable ? 'non' : null}>
           <Minus alt="icon-minus" onClick={onDecrease} />
         </button>
-        <p className={isDisable ? null : 'non'}>{count}</p>
-        <button type="button" className={isDisable ? null : 'non'}>
+        <p className={isDisable ? 'non' : null}>{count}</p>
+        <button type="button" className={isDisable ? 'non' : null}>
           <Plus alt="icon-plus" onClick={onIncrease} />
         </button>
       </CountBox>

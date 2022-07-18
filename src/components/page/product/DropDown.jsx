@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { DropMenu, NomalTxt, Line, CountBox, ChoiceBox } from 'style/productStyle/SelectStyle';
 import { AddCommas } from '../../../utils';
+
 import Down from '../../../img/Down.svg';
 import CloseBtn from '../../../img/CloseBtn.svg';
-
 import { ReactComponent as Plus } from '../../../img/Plus.svg';
 import { ReactComponent as Minus } from '../../../img/Minus.svg';
 
-const DropDown = ({ title, data, count, setCount, setOpthonPrice, optionpPrice }) => {
+const DropDown = ({ isShow, title, data, count, setCount, setOpthonPrice, optionpPrice }) => {
   const [isActive, setIsActive] = useState(false);
   const [selected, setSelected] = useState(title);
   const [open, setOpen] = useState(false);
@@ -28,6 +28,14 @@ const DropDown = ({ title, data, count, setCount, setOpthonPrice, optionpPrice }
     setCount(0);
   };
 
+  const onDisable = () => {
+    if (isShow === false) {
+      setIsActive(false);
+    } else {
+      setIsActive(!isActive);
+    }
+  };
+
   return (
     <>
       <DropMenu>
@@ -36,9 +44,7 @@ const DropDown = ({ title, data, count, setCount, setOpthonPrice, optionpPrice }
           <button
             type="button"
             className={isActive === true ? 'dropdown-btn active' : 'dropdown-btn'}
-            onClick={(e) => {
-              setIsActive(!isActive);
-            }}
+            onClick={onDisable}
           >
             <p>{selected}</p>
             <img src={Down} alt="down-icon" />
