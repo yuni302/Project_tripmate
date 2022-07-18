@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { LoginInfo, ListBox, ListCard } from 'style/listStyle/ListStyle';
 import ExclamationMark from 'img/ExclamationMark.svg';
 import Card from 'components/common/Card';
 
-const RandomListPage = () => {
+const RandomList = () => {
   const [item, setItem] = useState([]);
 
   const randomItem = (array) => {
@@ -32,22 +33,23 @@ const RandomListPage = () => {
       </LoginInfo>
       <ListBox>
         {item.slice(0, 12).map((res) => (
-          // <Link to={`/list/${res.productNum}`}>
-          <ListCard key={res.productNum}>
-            <Card
-              img={res.image[0]}
-              title={res.title}
-              content={res.contents}
-              price={res.price}
-              group={res.group}
-              theme={res.theme}
-              style={res.style}
-            />
-          </ListCard>
+          <Link to={`/list/${res.productNum}`} key={res.productNum}>
+            <ListCard>
+              <Card
+                img={res.image[0]}
+                title={res.title}
+                content={res.contents}
+                price={res.price}
+                group={res.group}
+                theme={res.theme}
+                style={res.style}
+              />
+            </ListCard>
+          </Link>
         ))}
       </ListBox>
     </>
   );
 };
 
-export default RandomListPage;
+export default RandomList;

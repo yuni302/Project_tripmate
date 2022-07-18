@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { ListCard, ListBox } from 'style/listStyle/ListStyle';
 import Card from 'components/common/Card';
+import RandomList from './RandomList';
 
-const CustomizedListPage = ({ content }) => {
+const CustomizedList = ({ content }) => {
   const [item, setItem] = useState([]);
+  const [login, setLogin] = useState(false);
 
   useEffect(() => {
     const get = async () => {
@@ -20,28 +23,32 @@ const CustomizedListPage = ({ content }) => {
 
   return (
     <div>
-      <ListBox>
-        {item
-          .filter((res) => res.keyword === content)
-          .slice(0, 12)
-          .map((res) => (
-            // <Link to={`/list/${res.productNum}`}>
-            <ListCard key={res.productNum}>
-              <Card
-                img={res.image[0]}
-                title={res.title}
-                content={res.contents}
-                price={res.price}
-                group={res.group}
-                theme={res.theme}
-                style={res.style}
-              />
-            </ListCard>
-            // </Link>
-          ))}
-      </ListBox>
+      {login ? (
+        <ListBox>
+          {item
+            .filter((res) => res.keyword === content)
+            .slice(0, 12)
+            .map((res) => (
+              <Link to={`/list/${res.productNum}`} key={res.productNum}>
+                <ListCard>
+                  <Card
+                    img={res.image[0]}
+                    title={res.title}
+                    content={res.contents}
+                    price={res.price}
+                    group={res.group}
+                    theme={res.theme}
+                    style={res.style}
+                  />
+                </ListCard>
+              </Link>
+            ))}
+        </ListBox>
+      ) : (
+        <RandomList />
+      )}
     </div>
   );
 };
 
-export default CustomizedListPage;
+export default CustomizedList;
