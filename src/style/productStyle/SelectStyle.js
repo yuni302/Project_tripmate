@@ -67,6 +67,7 @@ export const Date = styled.div`
     cursor: pointer;
     :disabled {
       border: 1px solid #afafaf;
+      color: #afafaf;
     }
   }
 `;
