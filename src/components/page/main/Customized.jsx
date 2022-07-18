@@ -1,38 +1,44 @@
 import axios from 'axios';
 import Card from 'components/common/Card';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { NormalCard } from 'style/commonStyle/CardStyle';
 import { Box, CustomizedTitle } from 'style/mainStyle/CustomizedStyle';
 
 const Customized = () => {
-  const name = 'login';
   const [item, setItem] = useState([]);
 
   useEffect(() => {
-    axios.get('https://bobbykjh.github.io/card.json').then((res) => setItem(res.data));
+    const get = async () => {
+      try {
+        const res = await axios.post('https://stfe-gotogether.herokuapp.com/product/a/getList');
+        setItem(res.data.productList);
+      } catch (err) {
+        console.error('Error : ', err);
+      }
+    };
+    get();
   }, []);
 
   return (
     <>
       <CustomizedTitle>
-        {name === 'login' ? (
-          <p>이미숙님의 성향에 맞는 추천 상품이에요!</p>
-        ) : (
-          <p>고객님의 성향에 맞는 상품을 찾아보세요!</p>
-        )}
+        <p>이미숙님의 성향에 맞는 추천 상품이에요!</p>
       </CustomizedTitle>
       <Box>
         {item.slice(0, 8).map((res) => (
-          <NormalCard key={res.id}>
-            <Card
-              Img={res.img}
-              Title={res.name}
-              Price={res.price}
-              Group={res.group}
-              Theme={res.theme}
-              Package={res.package}
-            />
-          </NormalCard>
+          <Link to={`/list/${res.productNum}`} key={res.productNum}>
+            <NormalCard>
+              <Card
+                img={res.image[0]}
+                title={res.title}
+                price={res.price}
+                group={res.group}
+                theme={res.theme}
+                style={res.style}
+              />
+            </NormalCard>
+          </Link>
         ))}
       </Box>
     </>
