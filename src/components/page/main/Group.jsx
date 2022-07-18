@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { ButtonGroup, CardList, Container, MainTitle, Section } from 'style/mainStyle/GroupStyle';
 import GroupFilter from './GroupFilter';
 
