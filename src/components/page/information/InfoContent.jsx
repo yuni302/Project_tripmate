@@ -26,16 +26,12 @@ const InfoContent = ({ pageName }) => {
       case 'oneonone':
         return (
           <>
-            <OneOnOne /> <InfoButton />
-          </>
-        );
-      case 'group-ask':
-        return (
-          <>
-            <GroupAsk />
+            <OneOnOne />
             <InfoButton />
           </>
         );
+      case 'group-ask':
+        return <GroupAsk />;
       default:
         return (
           <>
