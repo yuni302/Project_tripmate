@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -8,6 +9,7 @@ import momentPlugin from '@fullcalendar/moment';
 
 // Style Components
 import { CalendarStyle } from 'style/productStyle/ProductStyle';
+import { AddCommas } from 'utils';
 
 const Calendar = ({ img, productNum }) => {
   const [list, setList] = useState([]);
@@ -26,12 +28,20 @@ const Calendar = ({ img, productNum }) => {
     getList();
   }, []);
 
-  const PriceCommas = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  useEffect(() => {
+    document.querySelector('.fc-day-sun').innerHTML = '일';
+    document.querySelector('.fc-day-mon').innerHTML = '월';
+    document.querySelector('.fc-day-tue').innerHTML = '화';
+    document.querySelector('.fc-day-wed').innerHTML = '수';
+    document.querySelector('.fc-day-thu').innerHTML = '목';
+    document.querySelector('.fc-day-fri').innerHTML = '금';
+    document.querySelector('.fc-day-sat').innerHTML = '토';
+  }, []);
 
   const Title = list
     .filter((item) => item.productNum === productNum)
     .filter((item) => item.price !== undefined)
-    .map((item) => PriceCommas(item.price));
+    .map((item) => AddCommas(item.price));
 
   const Date = list
     .filter((item) => item.productNum === productNum)
