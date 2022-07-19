@@ -15,6 +15,7 @@ import KeywordPage from 'page/keyword/KeywordPage';
 import MyPage from 'page/mypage/MyPage';
 import GroupListPage from 'page/list/GroupListPage';
 import LogInPage from 'page/sign/LogInPage';
+import InformationPage from 'page/information/InformationPage';
 
 const App = () => (
   <>
@@ -32,6 +33,7 @@ const App = () => (
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/keyword" element={<KeywordPage />} />
       <Route path="/mypage" element={<MyPage />} />
+      <Route path="/information" element={<InformationPage />} />
     </Routes>
 
     <Footer />
