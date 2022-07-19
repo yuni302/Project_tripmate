@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
 import { ButtonList, ListBox, NormalButton } from 'style/listStyle/ListStyle';
 import AreaListFilter from './AreaListFilter';
+import { Area } from './TotalList';
 
-const AreaListPage = () => {
+const AreaList = () => {
   const [content, setContent] = useState('sea');
-  const AreaList = [
-    ['sea', '동남아시아'],
-    ['nea', '동북-중앙아시아'],
-    ['pacific', '서남아시아-태평양'],
-    ['eu', '유럽-코카서스'],
-    ['america', '북미-중남미'],
-    ['africa', '아프리카-중동'],
-  ];
 
-  const AreaListType = AreaList.map((data, index) => (
+  const AreaListType = Area.map((data, index) => (
     <button
       key={data[0]}
       type="button"
@@ -21,7 +14,7 @@ const AreaListPage = () => {
       className={index === 0 ? 'normal-btn active' : 'normal-btn'}
       onClick={(e) => {
         setContent(e.target.name);
-        for (let i = 0; i < AreaList.length; i += 1) {
+        for (let i = 0; i < Area.length; i += 1) {
           e.target.parentNode.childNodes[i].className = 'normal-btn';
         }
         e.target.classList.add('active');
@@ -43,4 +36,4 @@ const AreaListPage = () => {
   );
 };
 
-export default AreaListPage;
+export default AreaList;

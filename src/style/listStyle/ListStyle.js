@@ -1,5 +1,16 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { GroupCard } from 'style/commonStyle/CardStyle';
+
+const AppearY = keyframes`
+	0%{
+		opacity: 0;
+		margin-top: 50px;
+	}
+	100%{
+		opacity: 1;
+		margin-top: 0;
+	}
+`;
 
 // Random Page
 export const LoginInfo = styled.div`
@@ -62,6 +73,7 @@ export const ListBox = styled.div`
 `;
 
 export const ListCard = styled(GroupCard)`
+  animation: ${AppearY} 0.5s;
   width: 406px;
   border: 1px solid #afafaf;
   margin: 0 15px 30px 15px;

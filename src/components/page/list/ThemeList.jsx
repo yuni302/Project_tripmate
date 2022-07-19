@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import { ButtonList, ListBox, ThemeButton } from 'style/listStyle/ListStyle';
 import ThemeListFilter from './ThemeListFilter';
+import { Theme } from './TotalList';
 
-const ThemeListPage = () => {
+const ThemeList = () => {
   const [content, setContent] = useState('culture');
-  const ThemeList = [
-    ['culture', '문화탐방'],
-    ['rest', '휴양지'],
-    ['golf', '골프여행'],
-    ['trek', '트래킹'],
-    ['circuit', '성지순례'],
-  ];
 
-  const ThemeListType = ThemeList.map((data, index) => (
+  const ThemeListType = Theme.map((data, index) => (
     <button
       key={data[0]}
       type="button"
@@ -20,7 +14,7 @@ const ThemeListPage = () => {
       className={index === 0 ? 'normal-btn active' : 'normal-btn'}
       onClick={(e) => {
         setContent(e.target.name);
-        for (let i = 0; i < ThemeList.length; i += 1) {
+        for (let i = 0; i < Theme.length; i += 1) {
           e.target.parentNode.childNodes[i].className = 'normal-btn';
         }
         e.target.classList.add('active');
@@ -42,4 +36,4 @@ const ThemeListPage = () => {
   );
 };
 
-export default ThemeListPage;
+export default ThemeList;

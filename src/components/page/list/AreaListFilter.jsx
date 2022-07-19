@@ -26,19 +26,19 @@ const AreaListFilter = ({ content }) => {
           .filter((res) => res.destination === content)
           .slice(0, 12)
           .map((res) => (
-            // <Link to={`/list/${res.productNum}`}>
-            <ListCard key={res.productNum}>
-              <Card
-                img={res.image[0]}
-                title={res.title}
-                content={res.contents}
-                price={res.price}
-                group={res.group}
-                theme={res.theme}
-                style={res.style}
-              />
-            </ListCard>
-            // </Link>
+            <Link to={`/list/${res.productNum}`} key={res.productNum}>
+              <ListCard>
+                <Card
+                  img={res.image[0]}
+                  title={res.title}
+                  content={res.contents}
+                  price={res.price}
+                  group={res.group}
+                  theme={res.theme}
+                  style={res.style}
+                />
+              </ListCard>
+            </Link>
           ))}
       </ListBox>
     </div>
