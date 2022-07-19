@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import { ReactComponent as HeaderLogo } from 'img/HeaderLogo.svg';
 import { HeaderStyle } from 'style/commonStyle/HeaderStyle';
 import MobileHeader from './MobileHeader';
 
 const Header = () => {
+  const USER = useSelector((state) => state.user);
   const [scroll, setScroll] = useState(0);
   const [mode, setMode] = useState(window.innerWidth);
   const [distance, setDistance] = useState(true);
@@ -44,9 +47,7 @@ const Header = () => {
         <HeaderStyle distance={distance}>
           <div>
             <header className="header">
-              <p className="myPage">
-                <Link to="/login">로그인</Link>
-              </p>
+              <p className="myPage">{USER.isLogin ? <div>로그아웃</div> : <Link to="/login">로그인</Link>}</p>
               <p className="myPage">장바구니</p>
               <p className="myPage">
                 <Link to="/mypage">마이페이지</Link>
