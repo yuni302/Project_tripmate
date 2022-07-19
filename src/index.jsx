@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from 'style/commonStyle/ResetStyle';
+import store from 'store/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ScrollToTop from './ScrollToTop';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <GlobalStyle />
-    <App />
+    <Provider store={store}>
+      <GlobalStyle />
+      <ScrollToTop />
+      <App />
+    </Provider>
   </BrowserRouter>
 );
 
