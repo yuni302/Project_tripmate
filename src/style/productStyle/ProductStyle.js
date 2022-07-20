@@ -4,6 +4,9 @@ export const ProductStyle = styled.div`
   hr {
     max-width: 1300px;
     margin: 0 auto;
+    &:nth-of-type(2) {
+      margin-bottom: 35px;
+    }
   }
 `;
 
@@ -223,7 +226,11 @@ export const CalendarStyle = styled.div`
       background: #88888890;
     }
   }
-
+  .fc-day-other {
+    &:hover {
+      background: #fff;
+    }
+  }
   .fc-scrollgrid {
     width: 650px;
     height: 500px;
@@ -233,10 +240,10 @@ export const CalendarStyle = styled.div`
     border: none;
     display: block;
     margin: 0 auto;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     &::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera*/
+      display: none;
     }
   }
   .fc-scrollgrid-section {
@@ -249,11 +256,11 @@ export const CalendarStyle = styled.div`
     border: none;
   }
   .fc-col-header {
-    border: none;
     margin: 0 auto;
+    margin-bottom: 15px;
   }
   .fc-col-header-cell {
-    border: none;
+    margin-bottom: 10px;
   }
   .fc-daygrid-body {
     margin: 0 auto;
@@ -266,7 +273,7 @@ export const CalendarStyle = styled.div`
     border: none;
   }
   .fc-day-sun {
-    border: none;
+    /* border: none; */
   }
   .fc-scrollgrid-section {
     border: none;
@@ -301,28 +308,36 @@ export const CalendarStyle = styled.div`
   }
   .fc-dayGridMonth-view {
     border: none;
+    text-align: left;
   }
   .fc-view {
     border: none;
   }
-
   .fc-day-sun {
-    .fc-scrollgrid-sync-inner {
-      .fc-col-header-cell-cushion {
-        &:first-child {
-          color: #e96767;
-        }
-      }
-    }
+    text-align: left;
+    color: #e96767;
+  }
+  .fc-day-mon {
+    text-align: left;
+  }
+  .fc-day-tue {
+    text-align: left;
+  }
+  .fc-day-wed {
+    text-align: left;
+  }
+  .fc-day-thu {
+    text-align: left;
+  }
+  .fc-day-fri {
+    text-align: left;
   }
   .fc-day-sat {
-    .fc-scrollgrid-sync-inner {
-      .fc-col-header-cell-cushion {
-        &:first-child {
-          color: #0080c6;
-        }
-      }
-    }
+    text-align: left;
+    color: #0080c6;
+  }
+  .fc-col-header-cell {
+    margin-bottom: 15px;
   }
 
   //달력
@@ -333,18 +348,21 @@ export const CalendarStyle = styled.div`
     flex-direction: column;
     align-items: center;
     width: 670px;
-    height: 620px;
+    height: 630px;
     overflow: hidden;
     margin: 0 auto;
     .reservation {
       display: flex;
+      width: 100%;
+      height: 30px;
       position: absolute;
       left: 0;
-      bottom: 0;
+      background-color: #fff;
+      bottom: 14px;
       .plan {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
         margin: 0 10px;
         font-size: 18px;
         color: #888;
