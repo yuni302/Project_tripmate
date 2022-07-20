@@ -88,8 +88,6 @@ export const ListCard = styled(GroupCard)`
   }
   .hash-tag {
     font-size: 16px;
-    background-color: #ececec;
-    color: #000;
   }
   .title {
     line-height: 24px;
