@@ -1,10 +1,69 @@
-import React from 'react';
-import InfoDetail from 'components/page/product/InfoDetail';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
-const DetailPage = () => (
-  <div>
-    <InfoDetail />
-  </div>
-);
+import InfoDetail from 'components/page/product/InfoDetail';
+import ProductTitle from 'components/page/product/ProductTitle';
+import Calendar from 'components/page/product/Calendar';
+import TravelNews from 'components/page/product/TravelNews';
+import Related from 'components/page/product/Related';
+import Select from 'components/page/product/Select';
+
+const DetailPage = () => {
+  const { productNum } = useParams();
+  const [list, setList] = useState([]);
+
+  // header non-scroll option
+  try {
+    document.getElementById('header').style.position = 'relative';
+  } catch (e) {
+    console.error(e);
+  }
+
+  useEffect(() => {
+    const getList = async () => {
+      try {
+        const res = await axios.post('https://stfe-gotogether.herokuapp.com/product/a/getList');
+        setList(res.data.productList);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+    getList();
+  }, []);
+
+  return (
+    <div>
+      {list
+        .filter((item) => item.productNum === Number(productNum))
+        .map((item) => (
+          <div key={item.productNum}>
+            <ProductTitle
+              group={item.group}
+              theme={item.theme}
+              style={item.style}
+              title={item.title}
+              price={item.price}
+            />
+            <Calendar img={item.image[0]} productNum={item.productNum} />
+            <div
+              style={{
+                margin: '0 auto',
+                width: '1280px',
+                display: 'flex',
+                borderTop: '1px solid #afafaf',
+                paddingTop: '25px',
+              }}
+            >
+              <InfoDetail productNum={item.productNum} />
+              <Select />
+            </div>
+            <TravelNews title={item.title} />
+            <Related group={item.group} theme={item.theme} style={item.style} title={item.title} />
+          </div>
+        ))}
+    </div>
+  );
+};
 
 export default DetailPage;

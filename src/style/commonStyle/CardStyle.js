@@ -83,7 +83,8 @@ export const NormalCard = styled.div`
 // 그룹 카드
 export const GroupCard = styled(NormalCard)`
   animation: ${AppearX} 0.5s;
-
+  margin-left: 24px;
+  margin-right: 0px;
   width: 336px;
   border: 1px solid #ececec;
   border-radius: 8px;

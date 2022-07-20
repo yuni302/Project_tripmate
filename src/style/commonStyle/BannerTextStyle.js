@@ -5,8 +5,8 @@ import 'slick-carousel/slick/slick-theme.css';
 
 export const StyledSlider = styled(Slider)`
   position: absolute;
-  top: 236px;
-  left: 80px;
+  top: 30%;
+  left: 5%;
   z-index: 1;
   width: 410px;
 

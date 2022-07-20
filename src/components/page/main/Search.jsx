@@ -1,6 +1,6 @@
 /*eslint-disable*/
 import React, { useState } from 'react';
-import { SearchStyle } from 'style/commonStyle/SearchStyle';
+import { SearchStyle } from 'style/mainStyle/SearchStyle';
 
 const Search = () => {
   const [region, setRegion] = useState('');

@@ -42,9 +42,11 @@ export const GroupAskStyle = styled.div`
     color: #888888;
     div {
       width: 470px;
+      height: 200px;
       padding: 20px 20px 0 20px;
       border: 1px solid #afafaf;
       border-radius: 4px;
+      overflow: scroll;
     }
     label.terms {
       margin-top: 10px;

@@ -1,6 +1,8 @@
 import axios from 'axios';
+import Search from 'components/page/main/Search';
 import React, { useState, useEffect } from 'react';
 import { StyledPhoto } from 'style/commonStyle/BannerPhotoStyle';
+import { BannerStyle } from 'style/commonStyle/BannerStyle';
 import { StyledSlider } from 'style/commonStyle/BannerTextStyle';
 
 const Banner = () => {
@@ -51,14 +53,15 @@ const Banner = () => {
   ));
 
   return (
-    <>
+    <BannerStyle>
       <StyledSlider {...settings} fade="true" asNavFor={nav2} ref={(slider) => setSlider1(slider)}>
         {bannerItems}
       </StyledSlider>
       <StyledPhoto {...settings} dots="false" asNavFor={nav1} ref={(slider) => setSlider2(slider)}>
         {bannerPhoto}
       </StyledPhoto>
-    </>
+      <Search />
+    </BannerStyle>
   );
 };
 export default Banner;

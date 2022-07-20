@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const SearchStyle = styled.div`
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  background-color: #fff;
   box-shadow: 0px 5px 20px #bbbbbb10;
   border-radius: 8px;
   .search-box {
