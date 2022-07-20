@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CustomizedTitle = styled.div`
   width: 1279px;
   margin: 0 auto 30px;
-  p {
+  .title-Info {
     color: #000;
     font-weight: 700;
     font-size: 26px;
