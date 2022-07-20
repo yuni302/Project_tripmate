@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { logoutUser } from 'store/userSlice';
 
 import { ReactComponent as HeaderLogo } from 'img/HeaderLogo.svg';
 import { HeaderStyle } from 'style/commonStyle/HeaderStyle';
@@ -9,6 +11,7 @@ import MobileHeader from './MobileHeader';
 const Header = () => {
   if (window.location.pathname === '/keyword') return null;
   const USER = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   const [scroll, setScroll] = useState(0);
   const [mode, setMode] = useState(window.innerWidth);
   const [distance, setDistance] = useState(true);
@@ -41,6 +44,19 @@ const Header = () => {
     };
   }, [scroll, mode, distance]);
 
+  const LogOut = async () => {
+    const token = localStorage.getItem('token') ? JSON.parse(localStorage.getItem('token')).token : null;
+    console.log('token', token);
+    try {
+      const body = { token };
+      const res = await axios.post('https://stfe-gotogether.herokuapp.com/user/logout', body);
+      console.log(res);
+      dispatch(logoutUser(body));
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <div>
       {/* 화면전환 */}
@@ -48,10 +64,18 @@ const Header = () => {
         <HeaderStyle distance={distance}>
           <div>
             <header className="header">
-              <p className="myPage">{USER.isLogin ? <div>로그아웃</div> : <Link to="/login">로그인</Link>}</p>
-              <p className="myPage">장바구니</p>
-              <p className="myPage">
-                <Link to="/mypage">마이페이지</Link>
+              <p className="my-page">
+                {USER.isLogin ? (
+                  <button type="button" onClick={LogOut}>
+                    로그아웃
+                  </button>
+                ) : (
+                  <Link to="/login">로그인</Link>
+                )}
+              </p>
+              <p className="my-page">장바구니</p>
+              <p className="my-page">
+                <Link to="mypage">마이페이지</Link>
               </p>
             </header>
           </div>
@@ -94,12 +118,12 @@ const Header = () => {
               <Link to="/arealist">
                 <span>지역별 여행</span>
               </Link>
-              <nav>동남아/태평양</nav>
-              <nav>인도/중앙아시아</nav>
-              <nav>아프리카/중동</nav>
-              <nav>유럽/코카서스</nav>
-              <nav>중남미/북미</nav>
-              <nav>대만/중국/일본</nav>
+              <nav>동남아시아</nav>
+              <nav>동북-중앙아시아</nav>
+              <nav>서남아시아-태평양</nav>
+              <nav>유럽-코카서스</nav>
+              <nav>북미-중남미</nav>
+              <nav>아프리카-중동</nav>
             </ul>
             <ul className="content info">
               <span>고객 센터</span>
