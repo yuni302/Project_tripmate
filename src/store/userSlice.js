@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { createSlice } from '@reduxjs/toolkit';
 
 export const userSlice = createSlice({
@@ -9,12 +8,10 @@ export const userSlice = createSlice({
     isLogin: null,
   },
   reducers: {
-    loginUser: (state, action) => {
-      return {
-        ...action.payload,
-        isLogin: true,
-      };
-    },
+    loginUser: (state, action) => ({
+      ...action.payload,
+      isLogin: true,
+    }),
   },
 });
 

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { createSlice } from '@reduxjs/toolkit';
 
 export const joinSlice = createSlice({
@@ -11,11 +10,9 @@ export const joinSlice = createSlice({
     birth: 0,
   },
   reducers: {
-    joinUser: (state, action) => {
-      return {
-        ...action.payload,
-      };
-    },
+    joinUser: (state, action) => ({
+      ...action.payload,
+    }),
   },
 });
 
