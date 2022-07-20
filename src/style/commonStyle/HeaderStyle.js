@@ -42,9 +42,9 @@ export const HeaderStyle = styled.div`
     .myPage {
       display: inline-block;
       text-align: center;
-      width: 10%;
       color: #929292;
       font-size: 14px;
+      margin: 0 10px;
       padding: 20px 0;
       cursor: pointer;
       max-height: 54px;
@@ -60,8 +60,7 @@ export const HeaderStyle = styled.div`
     max-height: 58px;
     background-color: #ffffff90;
     transition: 1s;
-    top: 0;
-    ${({ distance }) => (distance ? `position: relative;` : `position: fixed;`)}
+    ${({ distance }) => (distance ? `position: relative;` : `position: fixed; top: 0;`)}
     &:hover {
       background-color: #fff;
     }
