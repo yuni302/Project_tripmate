@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  width: 1440px;
+export const GroupContainer = styled.div`
   margin: 0 auto;
+  margin-top: 100px;
+  width: 1280px;
+`;
+export const ThemeContainer = styled.div`
+  margin: 100px auto;
+  width: 1280px;
 `;
 export const Section = styled.div`
   display: flex;
@@ -47,5 +52,5 @@ export const ButtonGroup = styled.div`
 `;
 
 export const CardList = styled.div`
-  margin-left: 17px;
+  margin-left: 5px;
 `;

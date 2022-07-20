@@ -19,13 +19,13 @@ export const SelectBox = styled.div`
   height: 100%;
   background: #ffffff;
   padding: 20px;
+  margin: -20px 0 559px 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   position: sticky;
   top: 0;
-  margin-bottom: 559px;
   .person-count {
     color: #afafaf;
   }

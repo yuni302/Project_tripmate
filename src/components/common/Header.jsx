@@ -7,6 +7,7 @@ import { HeaderStyle } from 'style/commonStyle/HeaderStyle';
 import MobileHeader from './MobileHeader';
 
 const Header = () => {
+  if (window.location.pathname === '/keyword') return null;
   const USER = useSelector((state) => state.user);
   const [scroll, setScroll] = useState(0);
   const [mode, setMode] = useState(window.innerWidth);
@@ -69,7 +70,7 @@ const Header = () => {
               </Link>
             </ul>
             <ul className="content">
-              <Link to="/grouplist">
+              <Link to="/grouplist" tar="2030">
                 <span>그룹별 여행</span>
               </Link>
               <nav>2030끼리</nav>

@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 export const DetailStyle = styled.div`
   width: 871px;
   margin: 0 auto;
+  border-right: 1px solid #afafaf;
+  padding-top: 10px;
   .abstract {
     width: 871px;
     span {

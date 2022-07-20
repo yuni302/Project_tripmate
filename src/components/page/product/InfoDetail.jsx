@@ -18,11 +18,8 @@ const content = [
 ];
 const NAV_HEIGHT = 61;
 
-const body = {
-  productNum: 35,
-};
-
-const Detail = () => {
+const Detail = ({ productNum }) => {
+  const body = { productNum };
   const contentRef = useRef([]);
   const [scrollY, setScrollY] = useState(0);
   const [yCord, setYCord] = useState([]);
@@ -33,6 +30,7 @@ const Detail = () => {
   useEffect(() => {
     const getImage = async () => {
       try {
+        console.log('요청');
         const res = await axios.post('https://stfe-gotogether.herokuapp.com/product/a/getDetail', body);
         setInfoImg(res.data.productObj.image);
       } catch (err) {

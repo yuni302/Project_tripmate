@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { MainTitle, Container } from 'style/mainStyle/GroupStyle';
+import { MainTitle, ThemeContainer } from 'style/mainStyle/GroupStyle';
 import { ThemeSlider } from 'style/mainStyle/ThemeStyle';
 import { NormalCard } from 'style/commonStyle/CardStyle';
 import Card from 'components/common/Card';
@@ -43,7 +43,7 @@ const Theme = () => {
   }, []);
 
   return (
-    <Container>
+    <ThemeContainer>
       <MainTitle>이런 테마여행은 어떠세요?</MainTitle>
       <ThemeSlider {...settings}>
         {item.slice(0, 8).map((res) => (
@@ -61,7 +61,7 @@ const Theme = () => {
           </Link>
         ))}
       </ThemeSlider>
-    </Container>
+    </ThemeContainer>
   );
 };
 
