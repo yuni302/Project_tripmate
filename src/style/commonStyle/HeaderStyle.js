@@ -39,7 +39,7 @@ export const HeaderStyle = styled.div`
     &:hover {
       background-color: #fff;
     }
-    .myPage {
+    .my-page {
       display: inline-block;
       text-align: center;
       color: #929292;
