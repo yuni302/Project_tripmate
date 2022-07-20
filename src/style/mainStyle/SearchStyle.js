@@ -112,5 +112,8 @@ export const SearchStyle = styled.div`
       line-height: 24px;
       color: #ffffff;
     }
+    .search[disabled] {
+      background-color: #afafaf;
+    }
   }
 `;

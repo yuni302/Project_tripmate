@@ -1,23 +1,28 @@
-/*eslint-disable*/
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SearchStyle } from 'style/mainStyle/SearchStyle';
+import { Group } from 'components/page/list/TotalList';
 
 const Search = () => {
   const [region, setRegion] = useState('');
   const [checkedInputs, setCheckedInputs] = useState([]);
   const popularRegionList = ['유럽', '치앙마이', '시칠리아', '런던', '부다페스트'];
-  const groupList = [
-    { 2030: '2030끼리' },
-    { 3040: '3040끼리' },
-    { 5060: '5060끼리' },
-    { woman: '여자끼리' },
-    { man: '남자끼리' },
-    { family: '자녀동반' },
-  ];
+  const groupList = Group;
+  const navigate = useNavigate();
+  const [canSearch, setCanSearch] = useState(true);
+
+  useEffect(() => {
+    if (region !== '' || checkedInputs.length !== 0) {
+      setCanSearch(false);
+    } else {
+      setCanSearch(true);
+    }
+  }, [region, checkedInputs]);
 
   const PopularRegion = popularRegionList.map((reg) => (
     <li key={reg}>
       <button
+        type="button"
         onClick={(e) => {
           setRegion(e.target.innerHTML);
         }}
@@ -37,22 +42,21 @@ const Search = () => {
 
   const GroupType = groupList.map((group) => (
     <button
-      id={Object.keys(group)[0]}
-      className={checkedInputs.includes(Object.keys(group)[0]) ? 'btn active' : 'btn'}
-      key={Object.keys(group)[0]}
+      id={group[0]}
+      className={checkedInputs.includes(group[0]) ? 'btn active' : 'btn'}
+      key={group[0]}
       type="button"
-      checked={checkedInputs.includes(Object.keys(group)[0])}
+      checked={checkedInputs.includes(group[0])}
       onClick={(e) => {
-        changeHandler(e.currentTarget.checked, Object.keys(group)[0]);
+        changeHandler(e.currentTarget.checked, group[0]);
       }}
     >
-      {Object.values(group)}
+      {group[1]}
     </button>
   ));
 
   const searchProduct = () => {
-    // 작동 확인을 위한 코드, 추후 검색 기능 개발 예정
-    console.log(region, checkedInputs);
+    navigate('/search', { state: { region, checkedInputs } });
     setRegion('');
     setCheckedInputs([]);
   };
@@ -77,7 +81,7 @@ const Search = () => {
           <span className="who-sub-title">동행자 유형</span>
           <div className="select">{GroupType}</div>
         </div>
-        <button type="button" className="search" onClick={() => searchProduct()}>
+        <button type="button" className="search" disabled={canSearch} onClick={searchProduct}>
           검색하기
         </button>
       </div>
