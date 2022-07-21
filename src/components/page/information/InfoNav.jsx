@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import SubBanner from 'components/common/SubBanner';
 import { SubBannerStyle } from 'style/commonStyle/SubBannerStyle';
 import NoticeBanner from 'img/NoticeBanner.png';
@@ -12,6 +13,9 @@ import InfoContent from './InfoContent';
 const InfoNav = () => {
   const [pageName, setPageName] = useState('notice');
   const [image, setImage] = useState(NoticeBanner);
+  const location = useLocation();
+  const [pageName, setPageName] = useState(location.state ? location.state.infor : 'notice');
+
   const changePage = (e) => {
     const {
       target: { id },

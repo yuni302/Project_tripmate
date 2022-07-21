@@ -4,8 +4,6 @@ import noticeItem from './informationItems/noticeItem';
 import DropDown from './DropDown';
 
 const Notice = () => {
-  console.log(noticeItem[0].content.split('\n'));
-
   const noticeList = noticeItem.map((data, index) => (
     <div className="wrap" key={data.title}>
       <div className="number">{index + 1}</div>

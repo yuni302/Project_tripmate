@@ -102,22 +102,25 @@ export const HeaderStyle = styled.div`
         top: 60px;
       }
       /* DropDown */
-      nav {
-        display: none;
-        animation: ${dropDown} 0.5s;
-        font-weight: 500;
-        font-size: 16px;
-        transition: 0.5s;
-        padding: 20px 0;
-        background-color: #ffffff;
-        color: #1b1b1b;
-        cursor: pointer;
-        &:last-child {
+      a {
+        nav {
+          display: none;
+          animation: ${dropDown} 0.5s;
+          font-weight: 500;
+          font-size: 16px;
+          transition: 0.5s;
+          padding: 20px 0;
+          background-color: #ffffff;
+          color: #1b1b1b;
+          cursor: pointer;
+        }
+      }
+      a:last-child {
+        nav {
           border-bottom-left-radius: 8px;
           border-bottom-right-radius: 8px;
         }
       }
-
       &:hover {
         span {
           border-bottom: 4px solid #0080c6;
