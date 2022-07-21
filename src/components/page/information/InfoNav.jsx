@@ -11,7 +11,6 @@ import { InfoNavStyle } from 'style/informationStyle/InfoNavStyle';
 import InfoContent from './InfoContent';
 
 const InfoNav = () => {
-  const [pageName, setPageName] = useState('notice');
   const [image, setImage] = useState(NoticeBanner);
   const location = useLocation();
   const [pageName, setPageName] = useState(location.state ? location.state.infor : 'notice');
