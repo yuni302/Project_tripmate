@@ -87,11 +87,11 @@ const MyPagePrivacy = () => {
       <p className="input-title">성별</p>
       <div className="gender-club">
         <div className="gender">
-          <input type="radio" name="gender" />
+          <input type="radio" name="gender" className="gender-select" />
           <span>남성</span>
         </div>
         <div className="gender">
-          <input type="radio" name="gender" />
+          <input type="radio" name="gender" className="gender-select" />
           <span>여성</span>
         </div>
       </div>
