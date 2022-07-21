@@ -66,7 +66,7 @@ const Header = () => {
             <header className="header">
               <p className="my-page">
                 {USER.isLogin ? (
-                  <button type="button" onClick={LogOut}>
+                  <button type="button" onClick={LogOut} className="sign-out">
                     로그아웃
                   </button>
                 ) : (
