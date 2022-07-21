@@ -14,10 +14,7 @@ const MyPageReservation = () => (
     <div className="list-content">
       <div className="pay">2022.07.22</div>
       <div className="info">
-        <img
-          src="https://mblogthumb-phinf.pstatic.net/20160127_177/krazymouse_1453865104404DjQIi_PNG/%C4%AB%C4%AB%BF%C0%C7%C1%B7%BB%C1%EE_%B6%F3%C0%CC%BE%F0.png?type=w2"
-          alt="1"
-        />
+        <img src="https://cdn.imweb.me/thumbnail/20220708/154d66cfc5050.jpg" alt="1" />
         <div>
           <p className="title">핸디18이하 치앙마이 GOFLTEL 알파인 CC 5,6일</p>
           <p className="price">1,790,000원</p>
@@ -34,7 +31,7 @@ const MyPageReservation = () => (
     <div className="list-content">
       <div className="pay">2022.07.22</div>
       <div className="info">
-        <img src="https://t1.daumcdn.net/cfile/tistory/2207573D58CFDE2704" alt="1" />
+        <img src="https://cdn.imweb.me/thumbnail/20220706/abead65bbe05d.jpg" alt="1" />
         <div>
           <p className="title">핸디18이하 치앙마이 GOFLTEL 알파인 CC 5,6일</p>
           <p className="price">1,790,000원</p>
