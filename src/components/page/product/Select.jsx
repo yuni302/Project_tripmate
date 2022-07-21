@@ -5,7 +5,6 @@ import SelectDefalut from './SelectDefalut';
 import CartAdd from '../../../img/CartAdd.svg';
 
 const Select = ({ price, start, deadline, available, current }) => {
-  const [isDisable, setIsDisable] = useState(available);
   const [none, setNone] = useState(0);
 
   // scroll
@@ -35,8 +34,8 @@ const Select = ({ price, start, deadline, available, current }) => {
     };
   }, [scroll, fix]);
 
-  return isDisable ? (
-    <SelectDefalut isDisable={isDisable} price={price} deadline={deadline} current={current} start={start} />
+  return available ? (
+    <SelectDefalut available={available} price={price} deadline={deadline} current={current} start={start} />
   ) : (
     <SelectBox>
       <Date>
@@ -50,9 +49,9 @@ const Select = ({ price, start, deadline, available, current }) => {
 
       <TitleTxt>인원 선택</TitleTxt>
 
-      <PersonCount isDisable={isDisable} title="성인" price={0} count={0} setCount={setNone} />
-      <PersonCount isDisable={isDisable} title="아동(만2세 ~ 12세 미만)" price={0} count={0} setCount={setNone} />
-      <PersonCount isDisable={isDisable} title="유아(만2세 미만)" price={0} count={0} setCount={setNone} />
+      <PersonCount available={available} title="성인" price={0} count={0} setCount={setNone} />
+      <PersonCount available={available} title="아동(만2세 ~ 12세 미만)" price={0} count={0} setCount={setNone} />
+      <PersonCount available={available} title="유아(만2세 미만)" price={0} count={0} setCount={setNone} />
 
       <Line />
 

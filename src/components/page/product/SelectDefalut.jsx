@@ -12,7 +12,7 @@ const BUSINESS_DATA = [
 ];
 const ADDROOM_DATA = [{ id: 0, title: '객실 1인 사용료', subtitle: '1인 싱글룸 사용시 추가비용', value: 650000 }];
 
-const SelectDefalut = ({ isDisable, productNum, price, deadline, current, start }) => {
+const SelectDefalut = ({ available, productNum, price, deadline, current, start }) => {
   const [isShow, setIsShow] = useState(true);
   const body = { productNum };
 
@@ -35,6 +35,7 @@ const SelectDefalut = ({ isDisable, productNum, price, deadline, current, start 
   const [room, setRoom] = useState(0);
   const [business, setBusiness] = useState(0);
   const [optionpPrice, setOpthonPrice] = useState(0);
+  const [roomPrice, setRoomPrice] = useState(0);
 
   // price
   const [total, setTotal] = useState(0);
@@ -104,9 +105,15 @@ const SelectDefalut = ({ isDisable, productNum, price, deadline, current, start 
 
       <TitleTxt>인원 선택</TitleTxt>
 
-      <PersonCount title="성인" price={AdultPrice} count={adult} setCount={setAdult} />
-      <PersonCount title="아동(만2세 ~ 12세 미만)" price={ChildPrice} count={child} setCount={setChild} />
-      <PersonCount title="유아(만2세 미만)" price={BabyPrice} count={baby} setCount={setBaby} />
+      <PersonCount title="성인" price={AdultPrice} count={adult} setCount={setAdult} setIsShow={setIsShow} />
+      <PersonCount
+        title="아동(만2세 ~ 12세 미만)"
+        price={ChildPrice}
+        count={child}
+        setCount={setChild}
+        setIsShow={setIsShow}
+      />
+      <PersonCount title="유아(만2세 미만)" price={BabyPrice} count={baby} setCount={setBaby} setIsShow={setIsShow} />
 
       <Line />
 
@@ -115,8 +122,8 @@ const SelectDefalut = ({ isDisable, productNum, price, deadline, current, start 
         data={ADDROOM_DATA}
         count={room}
         setCount={setRoom}
-        setOpthonPrice={setOpthonPrice}
-        optionpPrice={optionpPrice}
+        setOpthonPrice={setRoomPrice}
+        optionpPrice={roomPrice}
       />
       <DropDown
         title="비즈니스 또는 비상구 좌석"
@@ -153,9 +160,9 @@ const SelectDefalut = ({ isDisable, productNum, price, deadline, current, start 
 
       <TitleTxt>인원 선택</TitleTxt>
 
-      <PersonCount isDisable={isDisable} title="성인" price={0} count={0} setCount={setNone} />
-      <PersonCount isDisable={isDisable} title="아동(만2세 ~ 12세 미만)" price={0} count={0} setCount={setNone} />
-      <PersonCount isDisable={isDisable} title="유아(만2세 미만)" price={0} count={0} setCount={setNone} />
+      <PersonCount available={available} title="성인" price={0} count={0} setCount={setNone} />
+      <PersonCount available={available} title="아동(만2세 ~ 12세 미만)" price={0} count={0} setCount={setNone} />
+      <PersonCount available={available} title="유아(만2세 미만)" price={0} count={0} setCount={setNone} />
 
       <Line />
 
