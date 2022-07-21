@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import SubBanner from 'components/common/SubBanner';
+import { SubBannerStyle } from 'style/commonStyle/SubBannerStyle';
+import AreaListBanner from 'img/AreaListBanner.png';
 import { ButtonList, ListBox, NormalButton } from 'style/listStyle/ListStyle';
 import AreaListFilter from './AreaListFilter';
 import { Area } from './TotalList';
@@ -26,6 +29,9 @@ const AreaList = () => {
 
   return (
     <>
+      <SubBannerStyle>
+        <SubBanner bannerName={AreaListBanner} />
+      </SubBannerStyle>
       <ButtonList>
         <NormalButton>{AreaListType}</NormalButton>
       </ButtonList>
