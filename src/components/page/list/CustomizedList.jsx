@@ -6,11 +6,12 @@ import { SubBannerStyle } from 'style/commonStyle/SubBannerStyle';
 import KeyWordListBanner from 'img/KeyWordListBanner.png';
 import { ListCard, ListBox } from 'style/listStyle/ListStyle';
 import Card from 'components/common/Card';
+import { useSelector } from 'react-redux';
 import RandomList from './RandomList';
 
 const CustomizedList = ({ content }) => {
+  const LOGIN = useSelector((state) => state.user);
   const [item, setItem] = useState([]);
-  const [login, setLogin] = useState(false);
 
   useEffect(() => {
     const get = async () => {
@@ -29,7 +30,7 @@ const CustomizedList = ({ content }) => {
       <SubBannerStyle>
         <SubBanner bannerName={KeyWordListBanner} />
       </SubBannerStyle>
-      {login ? (
+      {LOGIN.isLogin ? (
         <ListBox>
           {item
             .filter((res) => res.keyword === content)
