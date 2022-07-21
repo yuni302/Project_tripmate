@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import SubBanner from 'components/common/SubBanner';
+import { SubBannerStyle } from 'style/commonStyle/SubBannerStyle';
+import KeyWordListBanner from 'img/KeyWordListBanner.png';
 import { ListCard, ListBox } from 'style/listStyle/ListStyle';
 import Card from 'components/common/Card';
 import RandomList from './RandomList';
@@ -23,6 +26,9 @@ const CustomizedList = ({ content }) => {
 
   return (
     <div>
+      <SubBannerStyle>
+        <SubBanner bannerName={KeyWordListBanner} />
+      </SubBannerStyle>
       {login ? (
         <ListBox>
           {item
