@@ -8,6 +8,7 @@ import { ReactComponent as Shopping } from 'img/ShoppingBag.svg';
 import { ReactComponent as Search } from 'img/Search.svg';
 
 const MobileHeader = () => {
+  if (window.location.pathname === '/keyword') return null;
   const [scroll, setScroll] = useState(0);
   const [mobile, setDistance] = useState(false);
 
