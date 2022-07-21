@@ -51,6 +51,7 @@ export const HeaderStyle = styled.div`
     .my-page {
       display: flex;
       text-align: center;
+      align-items: center;
       color: #929292;
       font-size: 14px;
       margin: 0 10px;
@@ -58,6 +59,13 @@ export const HeaderStyle = styled.div`
       cursor: pointer;
       max-height: 54px;
       box-sizing: border-box;
+      .sign-out {
+        background: #fff;
+        border: none;
+        font-size: 14px;
+        color: #929292;
+        padding: 0;
+      }
     }
     .sign-btn {
       display: flex;
@@ -121,22 +129,25 @@ export const HeaderStyle = styled.div`
         top: 60px;
       }
       /* DropDown */
-      nav {
-        display: none;
-        animation: ${dropDown} 0.5s;
-        font-weight: 500;
-        font-size: 16px;
-        transition: 0.5s;
-        padding: 20px 0;
-        background-color: #ffffff;
-        color: #1b1b1b;
-        cursor: pointer;
-        &:last-child {
+      a {
+        nav {
+          display: none;
+          animation: ${dropDown} 0.5s;
+          font-weight: 500;
+          font-size: 16px;
+          transition: 0.5s;
+          padding: 20px 0;
+          background-color: #ffffff;
+          color: #1b1b1b;
+          cursor: pointer;
+        }
+      }
+      a:last-child {
+        nav {
           border-bottom-left-radius: 8px;
           border-bottom-right-radius: 8px;
         }
       }
-
       &:hover {
         span {
           border-bottom: 4px solid #0080c6;
@@ -177,6 +188,19 @@ export const MobileHeaderStyle = styled(HeaderStyle)`
   .mobile {
     ${({ mobile }) => (mobile ? `margin-bottom:0px;` : `margin-bottom:34px;`)}
   }
+  .header {
+    div {
+      div {
+        margin-top: 110px;
+        button {
+          background: #fff;
+          border: none;
+          padding: 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
   #header {
     justify-content: center;
     align-items: center;
@@ -193,6 +217,7 @@ export const MobileHeaderStyle = styled(HeaderStyle)`
       }
       nav {
         padding: 10px 0;
+        background: #fff;
         font-size: 14px;
       }
     }
