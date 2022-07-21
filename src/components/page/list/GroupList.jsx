@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { ButtonList, ListBox, NormalButton } from 'style/listStyle/ListStyle';
 import GroupListFilter from './GroupListFilter';
 import { Group } from './TotalList';
 
 const GroupList = () => {
-  const [content, setContent] = useState('2030');
+  const location = useLocation();
+  const [content, setContent] = useState(location.state ? location.state.group : '2030');
 
-  const GroupListType = Group.map((data, index) => (
+  const handelContent = (e) => {
+    setContent(e.target.name);
+    for (let i = 0; i < Group.length; i += 1) {
+      e.target.parentNode.childNodes[i].className = 'normal-btn';
+    }
+    e.target.classList.add('active');
+  };
+
+  const GroupListType = Group.map((data) => (
     <button
       key={data[0]}
       type="button"
       name={data[0]}
-      className={index === 0 ? 'normal-btn active' : 'normal-btn'}
-      onClick={(e) => {
-        setContent(e.target.name);
-        for (let i = 0; i < Group.length; i += 1) {
-          e.target.parentNode.childNodes[i].className = 'normal-btn';
-        }
-        e.target.classList.add('active');
-      }}
+      className={data[0] === content ? 'normal-btn active' : 'normal-btn'}
+      onClick={handelContent}
     >
       {data[1]}
     </button>

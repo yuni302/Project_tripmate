@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { InformationStyle } from 'style/informationStyle/InformationStyle';
 import { InfoNavStyle } from 'style/informationStyle/InfoNavStyle';
 import InfoContent from './InfoContent';
 
 const InfoNav = () => {
-  const [pageName, setPageName] = useState('notice');
+  const location = useLocation();
+  const [pageName, setPageName] = useState(location.state ? location.state.infor : 'notice');
+
   const changePage = (e) => {
     setPageName(e.target.id);
   };
