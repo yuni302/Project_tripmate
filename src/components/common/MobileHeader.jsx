@@ -59,11 +59,9 @@ const MobileHeader = () => {
         <header className="header">
           <div>
             <div>
-              <span>
-                <Link to="/search">
-                  <Search />
-                </Link>
-              </span>
+              <Link to="/search">
+                <Search />
+              </Link>
             </div>
             <div>
               <Shopping />
