@@ -41,9 +41,11 @@ const Detail = ({ productNum }) => {
 
   useEffect(() => {
     // 기준값 저장
-    const temp = [];
-    contentRef.current.map((data) => temp.push(data.getBoundingClientRect().top + window.pageYOffset - 1));
-    setYCord(temp);
+    setTimeout(() => {
+      const temp = [];
+      contentRef.current.map((data) => temp.push(data.getBoundingClientRect().top + window.pageYOffset - 1));
+      setYCord(temp);
+    }, 200);
   }, [infoImg]);
 
   useEffect(() => {
@@ -82,8 +84,8 @@ const Detail = ({ productNum }) => {
     };
   });
 
-  const detailMain = infoImg.slice(3).map((data) => <img src={data} alt="info-img" />);
-  detailMain.unshift(<img src={infoImg[1]} alt="info-img" />);
+  // eslint-disable-next-line
+  const detailMain = infoImg.slice(3).map((data, index) => <img src={data} key={index} alt="info-img" />);
 
   const moveToTarget = (index) => window.scrollTo(0, yCord[index] - NAV_HEIGHT);
   return (
@@ -106,6 +108,7 @@ const Detail = ({ productNum }) => {
       <InfoStyle className="info" fix={headFix}>
         {/* eslint no-return-assign: ["error"]  */}
         <div className="main" ref={(event) => (contentRef.current[0] = event)}>
+          <img src={infoImg[1]} key={infoImg[1]} alt="info-img" />
           {detailMain}
         </div>
         <div className="include" ref={(event) => (contentRef.current[1] = event)}>
