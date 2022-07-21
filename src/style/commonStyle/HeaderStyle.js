@@ -22,6 +22,7 @@ export const HeaderStyle = styled.div`
     margin: 0;
     border-top: 1px solid #d9d9d9;
   }
+
   div {
     ${({ distance }) => (distance ? `margin-bottom:0px;` : `margin-bottom:58px;`)}
   }
@@ -39,8 +40,16 @@ export const HeaderStyle = styled.div`
     &:hover {
       background-color: #fff;
     }
+    span {
+      position: relative;
+      margin-top: 55px;
+    }
+    button {
+      border: none;
+      background: #fff;
+    }
     .my-page {
-      display: inline-flex;
+      display: flex;
       text-align: center;
       align-items: center;
       color: #929292;
@@ -57,6 +66,16 @@ export const HeaderStyle = styled.div`
         color: #929292;
         padding: 0;
       }
+    }
+    .sign-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background: #fff;
+      font-size: 14px;
+      color: #929292;
+      padding: 0;
     }
   }
   #header {
@@ -162,6 +181,7 @@ export const MobileHeaderStyle = styled(HeaderStyle)`
       div {
         padding: 0 10px;
         cursor: pointer;
+        z-index: 99;
       }
     }
   }
