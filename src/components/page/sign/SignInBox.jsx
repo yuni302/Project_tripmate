@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -7,6 +6,10 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { SignInStyle } from 'style/signStyle/SignStyle';
 import { loginUser } from 'store/userSlice';
+
+import { ReactComponent as Apple } from 'img/Apple.svg';
+import { ReactComponent as Naver } from 'img/Naver.svg';
+import { ReactComponent as Kakao } from 'img/Kakao.svg';
 
 const SignInBox = () => {
   const navigation = useNavigate();
@@ -20,6 +23,17 @@ const SignInBox = () => {
 
   const handleChangePassword = (e) => setPassword(e.target.value);
 
+  const get = async (body) => {
+    try {
+      const res = await axios.post('https://stfe-gotogether.herokuapp.com/user/login', body);
+      dispatch(loginUser(body));
+      localStorage.setItem('token', JSON.stringify({ token: res.data.userInfo.token }));
+      navigation('/');
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const Submit = (e) => {
     e.preventDefault();
     const body = {
@@ -28,17 +42,6 @@ const SignInBox = () => {
       isLogin: USER.isLogin,
     };
     get(body);
-  };
-  const get = async (body) => {
-    try {
-      const res = await axios.post('https://stfe-gotogether.herokuapp.com/user/login', body);
-      dispatch(loginUser(body));
-      const token = res.data.userInfo.token;
-      localStorage.setItem('token', JSON.stringify({ token: res.data.userInfo.token }));
-      navigation('/');
-    } catch (err) {
-      console.error(err);
-    }
   };
 
   return (
@@ -77,13 +80,22 @@ const SignInBox = () => {
         <div className="box">
           <span className="log-in">SNS 로그인</span>
           <button type="button" className="sub-log-in">
-            애플 아이디로 시작하기
+            <p>
+              <Apple />
+              <p>애플 아이디로 시작하기</p>
+            </p>
           </button>
           <button type="button" className="sub-log-in">
-            카카오 아이다로 시작하기
+            <p>
+              <Kakao />
+              <p>카카오 아이디로 시작하기</p>
+            </p>
           </button>
           <button type="button" className="sub-log-in">
-            네이버 아이디로 시작하기
+            <p>
+              <Naver />
+              <p>네이버 아이디로 시작하기</p>
+            </p>
           </button>
           <p className="sign-up">
             고투게더에서 <span>나의 성향과 맞는 동행자</span>를 만나보세요!
