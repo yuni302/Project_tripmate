@@ -25,6 +25,7 @@ export const ReservationStyle = styled.div`
 
   .list-content {
     border: 1px solid #afafaf;
+    border-top: none;
     border-left: none;
     border-right: none;
     display: flex;
@@ -347,7 +348,10 @@ export const PrivacyStyle = styled(ReservationStyle)`
     width: 470px;
   }
   .gender {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 22px;
     span {
       margin-left: 7.5px;
       font-weight: 500;
@@ -381,5 +385,10 @@ export const PrivacyStyle = styled(ReservationStyle)`
     height: 60px;
     font-weight: 600;
     font-size: 20px;
+  }
+  .gender-select {
+    width: 21px;
+    height: 21px;
+    margin: 3px;
   }
 `;
