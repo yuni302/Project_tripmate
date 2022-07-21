@@ -65,7 +65,6 @@ export const CalendarStyle = styled.div`
   margin: 0 auto;
   margin-top: 28px;
   margin-bottom: 50px;
-  /* align-items: center; */
   justify-content: center;
   width: 100%;
   max-width: 1300px;
@@ -357,8 +356,9 @@ export const CalendarStyle = styled.div`
       height: 30px;
       position: absolute;
       left: 0;
+      bottom: 0;
       background-color: #fff;
-      bottom: 14px;
+      margin-left: 16px;
       .plan {
         display: flex;
         justify-content: center;
