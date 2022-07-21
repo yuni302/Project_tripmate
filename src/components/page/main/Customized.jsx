@@ -9,14 +9,11 @@ import ExclamationMark from 'img/ExclamationMark.svg';
 import { useSelector } from 'react-redux';
 import NullCustomized from './NullCustomized';
 
-// const isLogin =
 const Customized = () => {
   const USER = useSelector((state) => state.join);
   const LOGIN = useSelector((state) => state.user);
   const [item, setItem] = useState([]);
   const [nullKeyword, setNullKeyword] = useState(false);
-  console.log(USER);
-  console.log(LOGIN);
 
   useEffect(() => {
     const get = async () => {
