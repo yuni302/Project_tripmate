@@ -34,14 +34,15 @@ export const HeaderStyle = styled.div`
     max-width: 1360px;
     box-sizing: border-box;
     max-height: 58px;
-    background-color: #ffffff90;
+    background-color: #ffffff;
     top: 0;
     &:hover {
       background-color: #fff;
     }
     .my-page {
-      display: inline-block;
+      display: inline-flex;
       text-align: center;
+      align-items: center;
       color: #929292;
       font-size: 14px;
       margin: 0 10px;
@@ -49,6 +50,13 @@ export const HeaderStyle = styled.div`
       cursor: pointer;
       max-height: 54px;
       box-sizing: border-box;
+      .sign-out {
+        background: #fff;
+        border: none;
+        font-size: 14px;
+        color: #929292;
+        padding: 0;
+      }
     }
   }
   #header {
@@ -58,7 +66,7 @@ export const HeaderStyle = styled.div`
     justify-content: center;
     box-sizing: border-box;
     max-height: 58px;
-    background-color: #ffffff90;
+    background-color: #ffffff;
     transition: 1s;
     ${({ distance }) => (distance ? `position: relative;` : `position: fixed; top: 0;`)}
     &:hover {
@@ -160,6 +168,19 @@ export const MobileHeaderStyle = styled(HeaderStyle)`
   .mobile {
     ${({ mobile }) => (mobile ? `margin-bottom:0px;` : `margin-bottom:34px;`)}
   }
+  .header {
+    div {
+      div {
+        margin-top: 110px;
+        button {
+          background: #fff;
+          border: none;
+          padding: 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
   #header {
     justify-content: center;
     align-items: center;
@@ -176,6 +197,7 @@ export const MobileHeaderStyle = styled(HeaderStyle)`
       }
       nav {
         padding: 10px 0;
+        background: #fff;
         font-size: 14px;
       }
     }
