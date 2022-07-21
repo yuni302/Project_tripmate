@@ -206,7 +206,7 @@ export const ItemHistory = styled.div`
   }
   .cart-opthion {
     div {
-      background: #f5f5f5;
+      color: #0080c6;
       border: 1px solid #0080c6;
     }
     span {

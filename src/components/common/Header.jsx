@@ -73,7 +73,9 @@ const Header = () => {
                   <Link to="/login">로그인</Link>
                 )}
               </p>
-              <p className="my-page">장바구니</p>
+              <p className="my-page">
+                <Link to="/addcart">장바구니</Link>
+              </p>
               <p className="my-page">
                 <Link to="mypage">마이페이지</Link>
               </p>

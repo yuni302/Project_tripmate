@@ -16,6 +16,7 @@ import MyPage from 'page/mypage/MyPage';
 import GroupListPage from 'page/list/GroupListPage';
 import LogInPage from 'page/sign/LogInPage';
 import InformationPage from 'page/information/InformationPage';
+import AddCartPage from 'page/addCart/AddCartPage';
 
 const App = () => (
   <>
@@ -34,6 +35,7 @@ const App = () => (
       <Route path="/keyword" element={<KeywordPage />} />
       <Route path="/mypage" element={<MyPage />} />
       <Route path="/information" element={<InformationPage />} />
+      <Route path="/addcart" element={<AddCartPage />} />
     </Routes>
 
     <Footer />
