@@ -40,21 +40,34 @@ export const SignInStyle = styled.div`
         color: #1b1b1b;
       }
       .sub-log-in {
-        display: block;
+        display: flex;
+        justify-content: left;
+        align-items: center;
         margin: 5px auto;
         width: 370px;
         height: 60px;
         padding: 20px;
+        padding-left: 68px;
         font-size: 18px;
         font-weight: 500;
         border: 1px solid #afafaf;
         background-color: #fff;
-        color: #afafaf;
+        border-radius: 4px;
+        color: #1b1b1b;
         font-size: 18px;
         font-weight: 500;
+        p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          p {
+            margin-left: 20px;
+          }
+        }
       }
       .input {
         display: block;
+        border-radius: 4px;
         margin: 5px auto;
         width: 370px;
         height: 60px;
@@ -74,6 +87,7 @@ export const SignInStyle = styled.div`
         border: 0.97885px solid #afafaf;
         background-color: #0080c6;
         color: #fff;
+        border-radius: 4px;
       }
       .sign-up {
         display: block;
@@ -133,6 +147,7 @@ export const SignInStyle = styled.div`
           display: flex;
           justify-content: center;
           align-items: center;
+          border-radius: 4px;
           width: 240px;
           height: 40px;
           font-size: 12px;
