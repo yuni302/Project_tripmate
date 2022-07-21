@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import SubBanner from 'components/common/SubBanner';
+import { SubBannerStyle } from 'style/commonStyle/SubBannerStyle';
+import ThemeListBanner from 'img/ThemeListBanner.png';
 import { ButtonList, ListBox, ThemeButton } from 'style/listStyle/ListStyle';
 import ThemeListFilter from './ThemeListFilter';
 import { Theme } from './TotalList';
@@ -26,6 +29,9 @@ const ThemeList = () => {
 
   return (
     <>
+      <SubBannerStyle>
+        <SubBanner bannerName={ThemeListBanner} />
+      </SubBannerStyle>
       <ButtonList>
         <ThemeButton>{ThemeListType}</ThemeButton>
       </ButtonList>
