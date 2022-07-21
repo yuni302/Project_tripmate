@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import SubBanner from 'components/common/SubBanner';
+import { SubBannerStyle } from 'style/commonStyle/SubBannerStyle';
+import GroupListBanner from 'img/GroupListBanner.png';
 import { ButtonList, ListBox, NormalButton } from 'style/listStyle/ListStyle';
 import GroupListFilter from './GroupListFilter';
 import { Group } from './TotalList';
@@ -26,6 +29,9 @@ const GroupList = () => {
 
   return (
     <>
+      <SubBannerStyle>
+        <SubBanner bannerName={GroupListBanner} />
+      </SubBannerStyle>
       <ButtonList>
         <NormalButton>{GroupListType}</NormalButton>
       </ButtonList>
