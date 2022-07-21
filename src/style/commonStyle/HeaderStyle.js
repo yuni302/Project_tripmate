@@ -84,7 +84,7 @@ export const HeaderStyle = styled.div`
     margin: 0 auto;
     justify-content: center;
     box-sizing: border-box;
-    max-height: 58px;
+    max-height: 85px;
     background-color: #ffffff;
     transition: 1s;
     ${({ distance }) => (distance ? `position: relative;` : `position: fixed; top: 0;`)}
@@ -97,9 +97,9 @@ export const HeaderStyle = styled.div`
       max-width: 415px;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-end;
       text-align: center;
-      padding: 20px 0;
+      padding: 20px 0 10px 0;
       cursor: pointer;
       &:focus {
         background-color: #000;
@@ -116,7 +116,7 @@ export const HeaderStyle = styled.div`
         color: #1b1b1b;
         font-size: 16px;
         font-weight: 700;
-        padding: 20px 0;
+        padding: 49px 0 20px 0;
         cursor: pointer;
       }
       // position absolute
