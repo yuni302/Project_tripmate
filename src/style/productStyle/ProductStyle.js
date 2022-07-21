@@ -84,10 +84,7 @@ export const CalendarStyle = styled.div`
   }
 
   //달력
-  .fc-daygrid-event {
-  }
-  .fc-event-main-frame {
-  }
+
   .fc-event-title-container {
     display: inline;
     text-align: center;
@@ -154,8 +151,7 @@ export const CalendarStyle = styled.div`
     bottom: 0;
   }
   .fc-daygrid-day-events {
-    position: absolute;
-    bottom: 0;
+    width: 88px;
   }
   .fc-button-primary:not(:disabled) {
     &:active {
@@ -229,6 +225,19 @@ export const CalendarStyle = styled.div`
     &:hover {
       background: #fff;
     }
+  }
+  .fc-day-today {
+    background-color: #ffe4a1;
+  }
+  .fc-daygrid-event {
+    position: absolute;
+    top: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 29px;
+    width: 90px;
+    border-radius: 0;
   }
   .fc-scrollgrid {
     width: 650px;
