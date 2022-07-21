@@ -52,7 +52,7 @@ const MyPageKeyword = () => {
   const Religion = religionList.map((item) => (
     <div key={item}>
       <div className="select">
-        <input type="radio" />
+        <input type="radio" name="religion" />
         <p>{item}</p>
       </div>
     </div>
@@ -167,7 +167,7 @@ const MyPageKeyword = () => {
       </div>
 
       <button type="button" className="btn-modify">
-        수정하다
+        수정하기
       </button>
     </KeywordListStyle>
   );
