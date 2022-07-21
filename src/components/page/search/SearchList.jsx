@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { SearchListStyle, Blank } from 'style/searchStyle/SearchListStyle';
 import SearchFilter from './SearchFilter';
@@ -13,8 +14,9 @@ const GroupList = [
 ];
 
 const SearchList = () => {
-  const [searchWord, setSearchWord] = useState('');
-  const [checkedButtonList, setCheckedButtonList] = useState([]);
+  const location = useLocation();
+  const [searchWord, setSearchWord] = useState(location.state ? location.state.region : '');
+  const [checkedButtonList, setCheckedButtonList] = useState(location.state ? location.state.checkedInputs : []);
   const [result, setResult] = useState([]);
   const [isSearch, setIsSearch] = useState(false);
   const tempList = [];
@@ -68,14 +70,20 @@ const SearchList = () => {
   };
   const searchProduct = async () => {
     if (searchWord !== '') {
+      console.log('word:', searchWord);
       await wordSearch(searchWord);
     }
-    if (checkedButtonList !== []) {
+    if (checkedButtonList.length !== 0) {
+      console.log('checkedButtonList:', checkedButtonList);
       await checkedButtonSearch(checkedButtonList);
     }
     setIsSearch(true);
     setResult(tempList);
   };
+  useEffect(() => {
+    console.log('검색');
+    searchProduct();
+  }, []);
 
   return (
     <div>
@@ -83,7 +91,7 @@ const SearchList = () => {
         <span className="search-result">검색결과</span>
         <div>
           <p className="destination">여행지</p>
-          <input type="text" placeholder="여행지를 검색해주세요" onChange={handleSearchWord} />
+          <input type="text" placeholder="여행지를 검색해주세요" value={searchWord} onChange={handleSearchWord} />
         </div>
         <div>
           <p className="companion">동행자 유형</p>
