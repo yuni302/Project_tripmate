@@ -4,7 +4,7 @@ export const MyPageStyle = styled.div`
   margin-bottom: 100px;
   .myPage {
     display: block;
-    margin: 85px 0 43px 80px;
+    margin: 85px 0 43px 200px;
     font-size: 26px;
     font-weight: 700;
   }

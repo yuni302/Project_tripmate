@@ -12,16 +12,18 @@ const BUSINESS_DATA = [
 ];
 const ADDROOM_DATA = [{ id: 0, title: '객실 1인 사용료', subtitle: '1인 싱글룸 사용시 추가비용', value: 650000 }];
 
-const AdultPrice = 3000000;
-const ChildPrice = AdultPrice / 2;
-const BabyPrice = AdultPrice / 6;
+const SelectDefalut = ({ isDisable, productNum, price, deadline, current, start }) => {
+  const [isShow, setIsShow] = useState(true);
+  const body = { productNum };
 
-const body = {
-  productNum: 35,
-};
+  // scroll
+  const [scroll, setScroll] = useState(0);
+  const [fix, setFix] = useState(false);
 
-const SelectDefalut = (isDisable) => {
-  const [isShow, setIsShow] = useState(false);
+  // date
+  const year = start.toString().slice(0, 4);
+  const month = start.toString().slice(4, 6);
+  const day = start.toString().slice(6, 8);
 
   // 인원선택 count 수
   const [adult, setAdult] = useState(1);
@@ -37,10 +39,9 @@ const SelectDefalut = (isDisable) => {
   // price
   const [total, setTotal] = useState(0);
   const [point, setPoint] = useState(0);
-
-  // scroll
-  const [scroll, setScroll] = useState(0);
-  const [fix, setFix] = useState(false);
+  const AdultPrice = price;
+  const ChildPrice = AdultPrice / 2;
+  const BabyPrice = Math.round(AdultPrice / 6 / 1000) * 1000;
 
   const PERSON_TOTAL = adult * AdultPrice + child * ChildPrice + baby * BabyPrice;
   const OPTIOPN_TOTAL = optionpPrice * room + optionpPrice * business;
@@ -89,8 +90,12 @@ const SelectDefalut = (isDisable) => {
       <Date>
         <NomalTxt>선택 날짜</NomalTxt>
         <div>
-          <p>2022년 6월 16일</p>
-          <p>예약 14명/ 정원 30명</p>
+          <p>
+            {year}년 {month}월 {day}일
+          </p>
+          <p>
+            예약 {current}명/ 정원 {deadline}명
+          </p>
         </div>
         <button type="button">날짜 다시 선택하기</button>
       </Date>
@@ -159,7 +164,7 @@ const SelectDefalut = (isDisable) => {
 
       <Total>
         <NomalTxt>총 금액</NomalTxt>
-        <div className="total-price">가격문의</div>
+        <div className="total-price">0원</div>
         <div className="point">결제 완료 시 0포인트 적립 예정</div>
 
         <div className="select-btn">

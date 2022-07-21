@@ -4,9 +4,10 @@ import PersonCount from './PersonCount';
 import SelectDefalut from './SelectDefalut';
 import CartAdd from '../../../img/CartAdd.svg';
 
-const Select = () => {
-  const [isDisable, setIsDisable] = useState(false);
+const Select = ({ price, start, deadline, available, current }) => {
+  const [isDisable, setIsDisable] = useState(available);
   const [none, setNone] = useState(0);
+  console.log(available);
 
   // scroll
   const [scroll, setScroll] = useState(0);
@@ -36,6 +37,8 @@ const Select = () => {
   }, [scroll, fix]);
 
   return isDisable ? (
+    <SelectDefalut isDisable={isDisable} price={price} deadline={deadline} current={current} start={start} />
+  ) : (
     <SelectBox>
       <Date>
         <NomalTxt>선택 날짜</NomalTxt>
@@ -69,8 +72,6 @@ const Select = () => {
         </div>
       </Total>
     </SelectBox>
-  ) : (
-    <SelectDefalut isDisable={isDisable} />
   );
 };
 
