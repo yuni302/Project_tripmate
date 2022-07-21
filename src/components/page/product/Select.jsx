@@ -7,7 +7,6 @@ import CartAdd from '../../../img/CartAdd.svg';
 const Select = ({ price, start, deadline, available, current }) => {
   const [isDisable, setIsDisable] = useState(available);
   const [none, setNone] = useState(0);
-  console.log(available);
 
   // scroll
   const [scroll, setScroll] = useState(0);
