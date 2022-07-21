@@ -56,10 +56,10 @@ const Detail = ({ productNum }) => {
   // 현재 위치 계산
   const calPosition = (current) =>
     yCord.slice(1).length - yCord.slice(1).filter((spot) => spot - NAV_HEIGHT - 1 > current).length;
-  const startY = contentRef.current[0].getBoundingClientRect().top + window.pageYOffset;
-  const endY = contentRef.current[5].getBoundingClientRect().top + window.pageYOffset;
 
   useEffect(() => {
+    const startY = contentRef.current[0].getBoundingClientRect().top + window.pageYOffset;
+    const endY = contentRef.current[5].getBoundingClientRect().top + window.pageYOffset;
     setCurrentPosition(calPosition(scrollY));
     if (scrollY >= startY && scrollY <= endY) {
       setHeadFix(true);
