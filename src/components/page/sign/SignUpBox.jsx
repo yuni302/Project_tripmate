@@ -138,7 +138,7 @@ const SignUpBox = () => {
           </option>
         ))}
       </select>
-      <p className="name">성별 (선택)</p>
+      <p className="name">성별</p>
       <div>
         <div className="gender">
           <input type="radio" className="type" name="gender" value={gender} onClick={handleChangeMale} />
