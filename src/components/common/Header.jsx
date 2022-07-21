@@ -47,11 +47,9 @@ const Header = () => {
 
   const LogOut = async () => {
     const token = localStorage.getItem('token') ? JSON.parse(localStorage.getItem('token')).token : null;
-    console.log('token', token);
     try {
       const body = { token };
       const res = await axios.post('https://stfe-gotogether.herokuapp.com/user/logout', body);
-      console.log(res);
       dispatch(logoutUser(body));
     } catch (err) {
       console.error(err);
