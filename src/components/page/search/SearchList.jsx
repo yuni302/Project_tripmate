@@ -70,18 +70,15 @@ const SearchList = () => {
   };
   const searchProduct = async () => {
     if (searchWord !== '') {
-      console.log('word:', searchWord);
       await wordSearch(searchWord);
     }
     if (checkedButtonList.length !== 0) {
-      console.log('checkedButtonList:', checkedButtonList);
       await checkedButtonSearch(checkedButtonList);
     }
     setIsSearch(true);
     setResult(tempList);
   };
   useEffect(() => {
-    console.log('검색');
     searchProduct();
   }, []);
 
