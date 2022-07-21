@@ -56,7 +56,14 @@ const DetailPage = () => {
               }}
             >
               <InfoDetail productNum={item.productNum} />
-              <Select />
+              <Select
+                productNum={item.productNum}
+                price={item.price}
+                available={item.available}
+                deadline={item.deadline}
+                start={item.start[0]}
+                current={item.current}
+              />
             </div>
             <TravelNews title={item.title} />
             <Related group={item.group} theme={item.theme} style={item.style} title={item.title} />
