@@ -5,7 +5,7 @@ import { AddCommas } from '../../../utils';
 import { ReactComponent as Plus } from '../../../img/Plus.svg';
 import { ReactComponent as Minus } from '../../../img/Minus.svg';
 
-const PersonCount = ({ isDisable, title, price, count, setCount }) => {
+const PersonCount = ({ available, title, price, count, setCount, setIsShow }) => {
   const onIncrease = () => {
     setCount((prevCount) => prevCount + 1);
   };
@@ -23,11 +23,11 @@ const PersonCount = ({ isDisable, title, price, count, setCount }) => {
       </div>
 
       <CountBox>
-        <button type="button" className={isDisable ? 'non' : null}>
+        <button type="button" className={available || setIsShow ? null : 'non'}>
           <Minus alt="icon-minus" onClick={onDecrease} />
         </button>
-        <p className={isDisable ? 'non' : null}>{count}</p>
-        <button type="button" className={isDisable ? 'non' : null}>
+        <p className={available || setIsShow ? null : 'non'}>{count}</p>
+        <button type="button" className={available || setIsShow ? null : 'non'}>
           <Plus alt="icon-plus" onClick={onIncrease} />
         </button>
       </CountBox>

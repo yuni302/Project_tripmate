@@ -7,7 +7,7 @@ import CloseBtn from '../../../img/CloseBtn.svg';
 import { ReactComponent as Plus } from '../../../img/Plus.svg';
 import { ReactComponent as Minus } from '../../../img/Minus.svg';
 
-const DropDown = ({ isShow, title, data, count, setCount, setOpthonPrice, optionpPrice }) => {
+const DropDown = ({ available, title, data, count, setCount, setOpthonPrice, optionpPrice }) => {
   const [isActive, setIsActive] = useState(false);
   const [selected, setSelected] = useState(title);
   const [open, setOpen] = useState(false);
@@ -29,7 +29,7 @@ const DropDown = ({ isShow, title, data, count, setCount, setOpthonPrice, option
   };
 
   const onDisable = () => {
-    if (isShow === false) {
+    if (available === false) {
       setIsActive(false);
     } else {
       setIsActive(!isActive);
