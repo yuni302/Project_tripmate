@@ -178,6 +178,17 @@ export const KeywordListStyle = styled(ReservationStyle)`
     font-size: 18px;
     font-weight: 500;
     color: #888;
+    &:checked {
+      background: #000;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    input[type='checkbox']:checked {
+      color: #fff;
+      background: #000;
+    }
   }
   .keyword-select {
     position: relative;
@@ -190,6 +201,7 @@ export const KeywordListStyle = styled(ReservationStyle)`
     padding: 20px;
     width: 470px;
     height: 60px;
+    font-size: 18px;
     span {
       color: #afafaf;
     }
@@ -205,6 +217,8 @@ export const KeywordListStyle = styled(ReservationStyle)`
     margin: 50px auto 0 auto;
     width: 150px;
     height: 60px;
+    font-weight: 600;
+    font-size: 20px;
   }
   .select-box {
     position: absolute;
@@ -226,5 +240,146 @@ export const KeywordListStyle = styled(ReservationStyle)`
     background: #fff;
     padding: 20px;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+export const PrivacyStyle = styled(ReservationStyle)`
+  display: block;
+  .privacy-title {
+    display: block;
+    margin: 60px auto;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 60px 0 20px 0;
+  }
+  .profile-photo {
+    display: block;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    margin: 35px auto 0 auto;
+  }
+  .user-name {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin: 20px auto 8px auto;
+    width: 300px;
+    height: 24px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .photo {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #0080c6;
+    font-size: 16px;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .input-title {
+    display: block;
+    margin: 10px auto;
+    width: 470px;
+    height: 21px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .input {
+    display: block;
+    width: 470px;
+    height: 60px;
+    background: #ffffff;
+    border: 1px solid #0080c6;
+    border-radius: 4px;
+    color: #1b1b1b;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 20px;
+    margin: 0 auto;
+    color: #888;
+  }
+  .input-check {
+    display: block;
+    width: 470px;
+    height: 60px;
+    background: #ffffff;
+    border: 1px solid #0080c6;
+    border-radius: 4px;
+    color: #1b1b1b;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 20px;
+    margin: 0 auto;
+    color: #888;
+    margin-bottom: 47px;
+  }
+  .input-birth {
+    display: inline-block;
+    width: 150px;
+    height: 60px;
+    background: #ffffff;
+    border: 1px solid #0080c6;
+    border-radius: 4px;
+    color: #1b1b1b;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 20px;
+    margin: 0 auto;
+    color: #888;
+    margin: 5px 0;
+    margin-bottom: 47px;
+  }
+  .birth-check {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px auto;
+    text-align: center;
+    width: 470px;
+  }
+  .gender {
+    display: inline-block;
+    span {
+      margin-left: 7.5px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+  .gender-club {
+    margin: 0 auto;
+    width: 470px;
+  }
+  .terms {
+    display: block;
+    margin: 60px auto;
+    width: 470px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    span {
+      color: #0080c6;
+    }
+  }
+  .btn-modify {
+    display: block;
+    background-color: #0080c6;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 150px;
+    height: 60px;
+    font-weight: 600;
+    font-size: 20px;
   }
 `;
