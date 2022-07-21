@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logoutUser } from 'store/userSlice';
 
@@ -9,7 +9,8 @@ import { HeaderStyle } from 'style/commonStyle/HeaderStyle';
 import MobileHeader from './MobileHeader';
 
 const Header = () => {
-  if (window.location.pathname === '/keyword') return null;
+  const location = useLocation();
+  if (location.pathname === '/keyword') return null;
   const USER = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [scroll, setScroll] = useState(0);

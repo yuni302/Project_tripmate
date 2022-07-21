@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import Youtube from 'img/Youtube.svg';
 import Facebook from 'img/Facebook.svg';
 import Instagram from 'img/Instagram.svg';
@@ -6,7 +7,8 @@ import Logo from 'img/FooterLogo.svg';
 import { FooterStyle } from 'style/commonStyle/FooterStyle';
 
 const Footer = () => {
-  if (window.location.pathname === '/keyword') return null;
+  const location = useLocation();
+  if (location.pathname === '/keyword') return null;
   return (
     <FooterStyle>
       <div id="footer">
