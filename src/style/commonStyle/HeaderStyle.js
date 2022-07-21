@@ -22,6 +22,7 @@ export const HeaderStyle = styled.div`
     margin: 0;
     border-top: 1px solid #d9d9d9;
   }
+
   div {
     ${({ distance }) => (distance ? `margin-bottom:0px;` : `margin-bottom:58px;`)}
   }
@@ -34,13 +35,21 @@ export const HeaderStyle = styled.div`
     max-width: 1360px;
     box-sizing: border-box;
     max-height: 58px;
-    background-color: #ffffff90;
+    background-color: #ffffff;
     top: 0;
     &:hover {
       background-color: #fff;
     }
+    span {
+      position: relative;
+      margin-top: 55px;
+    }
+    button {
+      border: none;
+      background: #fff;
+    }
     .my-page {
-      display: inline-block;
+      display: flex;
       text-align: center;
       color: #929292;
       font-size: 14px;
@@ -50,6 +59,16 @@ export const HeaderStyle = styled.div`
       max-height: 54px;
       box-sizing: border-box;
     }
+    .sign-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background: #fff;
+      font-size: 14px;
+      color: #929292;
+      padding: 0;
+    }
   }
   #header {
     display: flex;
@@ -58,7 +77,7 @@ export const HeaderStyle = styled.div`
     justify-content: center;
     box-sizing: border-box;
     max-height: 58px;
-    background-color: #ffffff90;
+    background-color: #ffffff;
     transition: 1s;
     ${({ distance }) => (distance ? `position: relative;` : `position: fixed; top: 0;`)}
     &:hover {
@@ -151,6 +170,7 @@ export const MobileHeaderStyle = styled(HeaderStyle)`
       div {
         padding: 0 10px;
         cursor: pointer;
+        z-index: 99;
       }
     }
   }
