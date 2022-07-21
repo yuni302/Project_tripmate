@@ -8,6 +8,7 @@ import Calendar from 'components/page/product/Calendar';
 import TravelNews from 'components/page/product/TravelNews';
 import Related from 'components/page/product/Related';
 import Select from 'components/page/product/Select';
+import { ProductInfoStyle } from 'style/productStyle/ProductInfoStyle';
 
 const DetailPage = () => {
   const { productNum } = useParams();
@@ -46,18 +47,10 @@ const DetailPage = () => {
               price={item.price}
             />
             <Calendar img={item.image[0]} productNum={item.productNum} />
-            <div
-              style={{
-                margin: '0 auto',
-                width: '1280px',
-                display: 'flex',
-                borderTop: '1px solid #afafaf',
-                paddingTop: '25px',
-              }}
-            >
+            <ProductInfoStyle>
               <InfoDetail productNum={item.productNum} />
               <Select />
-            </div>
+            </ProductInfoStyle>
             <TravelNews title={item.title} />
             <Related group={item.group} theme={item.theme} style={item.style} title={item.title} />
           </div>
