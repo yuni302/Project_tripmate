@@ -4,7 +4,7 @@ export const NullCustomizedStyle = styled.div`
   border: 1px solid #afafaf;
   border-radius: 8px;
   width: 1280px;
-  margin: 0 auto;
+  margin: 0 auto 100px;
   text-align: center;
   p {
     font-weight: 700;

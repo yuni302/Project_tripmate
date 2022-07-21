@@ -14,11 +14,11 @@ const AppearY = keyframes`
 
 // Random Page
 export const LoginInfo = styled.div`
-  margin: 0 auto;
+  margin: 13px auto 30px;
   display: flex;
   width: 1280px;
-  margin-bottom: 30px;
   p {
+    font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     color: #afafaf;
