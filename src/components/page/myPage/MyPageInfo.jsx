@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { InfoListStyle } from 'style/myPageStyle/MyPageListStyle';
 import { ButtonModify } from './MyPage';
 import MyPageKeyword from './MyPageKeyword';
+import MyPagePrivacy from './MyPagePrivacy';
 
 const MyPageInfo = () => {
   const [btn, setBtn] = useState('keyword');
@@ -30,7 +31,7 @@ const MyPageInfo = () => {
     <InfoListStyle>
       <div className="btn-group">{ModifyType}</div>
       {btn === 'keyword' && <MyPageKeyword />}
-      {btn === 'info' && 2}
+      {btn === 'info' && <MyPagePrivacy />}
     </InfoListStyle>
   );
 };
