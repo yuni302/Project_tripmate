@@ -30,7 +30,6 @@ const Detail = ({ productNum }) => {
   useEffect(() => {
     const getImage = async () => {
       try {
-        console.log('요청');
         const res = await axios.post('https://stfe-gotogether.herokuapp.com/product/a/getDetail', body);
         setInfoImg(res.data.productObj.image);
       } catch (err) {
@@ -57,10 +56,12 @@ const Detail = ({ productNum }) => {
   // 현재 위치 계산
   const calPosition = (current) =>
     yCord.slice(1).length - yCord.slice(1).filter((spot) => spot - NAV_HEIGHT - 1 > current).length;
+  const startY = contentRef.current[0].getBoundingClientRect().top + window.pageYOffset;
+  const endY = contentRef.current[5].getBoundingClientRect().top + window.pageYOffset;
 
   useEffect(() => {
     setCurrentPosition(calPosition(scrollY));
-    if (scrollY >= contentRef.current[0].getBoundingClientRect().top + window.pageYOffset - NAV_HEIGHT) {
+    if (scrollY >= startY && scrollY <= endY) {
       setHeadFix(true);
     } else {
       setHeadFix(false);

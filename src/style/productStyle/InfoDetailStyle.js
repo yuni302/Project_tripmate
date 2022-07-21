@@ -1,10 +1,9 @@
 import styled, { css } from 'styled-components';
 
 export const DetailStyle = styled.div`
-  width: 871px;
-  margin: 0 auto;
+  width: 911px;
   border-right: 1px solid #afafaf;
-  padding-top: 10px;
+  padding-top: 10px 40px 0 0;
   .abstract {
     width: 871px;
     span {
@@ -17,12 +16,14 @@ export const DetailStyle = styled.div`
     }
   }
   .diff-info {
+    display: flex;
+    flex-direction: column;
     span {
       font-size: 26px;
       font-weight: 700;
     }
     img {
-      margin-top: 40px;
+      max-width: 870px;
     }
   }
 `;
@@ -53,6 +54,7 @@ export const NavStyle = styled.div`
 export const InfoStyle = styled.div`
   ${({ fix }) => (fix ? `margin-top: 60px;` : null)}
   scroll-margin-top:60px;
+
   div:nth-child(2) {
     margin-top: 0;
   }
