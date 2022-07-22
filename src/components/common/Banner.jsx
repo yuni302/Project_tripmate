@@ -15,7 +15,7 @@ const Banner = () => {
   useEffect(() => {
     const getBannerData = async () => {
       try {
-        const res = await axios.get('https://bobbykjh.github.io/banner.json');
+        const res = await axios.get('https://raw.githubusercontent.com/Hungeun2/trip-data/main/banner.json');
         if (res.status !== 200) throw new Error("Can't find news");
         setBannerList(res.data);
       } catch (e) {
@@ -43,12 +43,14 @@ const Banner = () => {
     <div key={data.title}>
       <p>{data.hashtag}</p>
       <h1>{data.title}</h1>
-      <a href="*">see more →</a>
+      <p>see more →</p>
     </div>
   ));
   const bannerPhoto = bannerList.map((data) => (
     <div key={data.title}>
-      <img src={data.img} alt="bannerPhoto" />
+      <a href={`/list/${data.productNum}`}>
+        <img src={data.img} alt="bannerPhoto" />
+      </a>
     </div>
   ));
 
