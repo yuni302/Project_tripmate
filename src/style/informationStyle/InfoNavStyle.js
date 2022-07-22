@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const InfoNavStyle = styled.div`
   display: flex;
+  margin-bottom: 60px;
   button.information-nav {
     width: 320px;
     height: 60px;
