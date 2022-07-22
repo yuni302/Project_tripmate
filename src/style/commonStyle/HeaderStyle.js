@@ -26,13 +26,23 @@ export const HeaderStyle = styled.div`
   div {
     ${({ distance }) => (distance ? `margin-bottom:0px;` : `margin-bottom:85px;`)}
   }
+  .header-max {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 85px;
+    background: #fff;
+    margin: 0;
+    ${({ distance }) => (distance ? `position: relative;` : `position: fixed; top: 0;`)}
+  }
 
   .header {
     display: flex;
     width: 100%;
     margin: 0 auto;
     justify-content: right;
-    max-width: 1360px;
+    max-width: 1130px;
     box-sizing: border-box;
     max-height: 58px;
     background-color: #ffffff;
@@ -79,7 +89,7 @@ export const HeaderStyle = styled.div`
     }
   }
   #header {
-    display: flex;
+    display: inline-flex;
     width: 100%;
     margin: 0 auto;
     justify-content: center;
@@ -87,13 +97,14 @@ export const HeaderStyle = styled.div`
     max-height: 85px;
     background-color: #ffffff;
     transition: 1s;
+    max-width: 1440px;
     ${({ distance }) => (distance ? `position: relative;` : `position: fixed; top: 0;`)}
     &:hover {
       background-color: #fff;
     }
 
     h1 {
-      width: 25%;
+      width: 20%;
       max-width: 415px;
       display: flex;
       justify-content: center;
@@ -114,7 +125,8 @@ export const HeaderStyle = styled.div`
       span {
         display: block;
         color: #1b1b1b;
-        font-size: 16px;
+        font-size: 18px;
+        max-height: 85px;
         font-weight: 700;
         padding: 49px 0 20px 0;
         cursor: pointer;
@@ -189,9 +201,19 @@ export const MobileHeaderStyle = styled(HeaderStyle)`
     ${({ mobile }) => (mobile ? `margin-bottom:0px;` : `margin-bottom:34px;`)}
   }
   .header {
+    .header-nav {
+      margin: 0;
+      .nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        height: 32px;
+      }
+    }
     div {
       div {
-        margin-top: 110px;
+        margin-top: 0;
         button {
           background: #fff;
           border: none;
