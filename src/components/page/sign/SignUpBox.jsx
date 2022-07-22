@@ -73,7 +73,7 @@ const SignUpBox = () => {
         dispatch(joinUser(body));
         navigation('/login');
       })
-      .error((error) => alert('아이디와 비밀번호를 확인해주세요.'));
+      .error((error) => console.err(error));
   };
 
   return (
@@ -140,15 +140,14 @@ const SignUpBox = () => {
       </select>
       <p className="name">성별</p>
       <div>
-        <div className="gender">
-          <input type="radio" className="type" name="gender" value={gender} onClick={handleChangeMale} />
+        <label htmlFor="male" className="gender">
+          <input type="radio" id="male" className="type" name="gender" value={gender} onClick={handleChangeMale} />
           <span>남성</span>
-        </div>
-
-        <div className="gender">
-          <input type="radio" className="type" name="gender" value={gender} onClick={handleChangeFemale} />
+        </label>
+        <label htmlFor="female" className="gender">
+          <input type="radio" id="female" className="type" name="gender" value={gender} onClick={handleChangeFemale} />
           <span>여성</span>
-        </div>
+        </label>
       </div>
       <p className="i">
         고투게더 <Link to="/">이용약관</Link> 확인하기
