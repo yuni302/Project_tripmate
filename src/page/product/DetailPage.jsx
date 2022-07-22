@@ -17,7 +17,6 @@ const DetailPage = () => {
   // header non-scroll option
   try {
     document.getElementById('header-max').style.position = 'relative';
-    document.getElementById('header').style.position = 'relative';
   } catch (e) {
     console.error(e);
   }
