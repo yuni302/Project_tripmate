@@ -57,13 +57,13 @@ const MobileHeader = () => {
     <MobileHeaderStyle mobile={mobile}>
       <div className="mobile">
         <header className="header">
-          <div>
-            <div>
+          <div className="header-nav">
+            <div className="nav">
               <Link to="/search">
                 <Search />
               </Link>
             </div>
-            <div>
+            <div className="nav">
               <Shopping />
             </div>
           </div>
@@ -72,8 +72,8 @@ const MobileHeader = () => {
               <Mobile />
             </Link>
           </h1>
-          <div>
-            <div>
+          <div className="header-nav">
+            <div className="nav">
               {USER.isLogin ? (
                 <button type="button" onClick={LogOut}>
                   <Logout />
@@ -84,7 +84,7 @@ const MobileHeader = () => {
                 </Link>
               )}
             </div>
-            <div>
+            <div className="nav">
               <Link to="/mypage">
                 <User />
               </Link>
