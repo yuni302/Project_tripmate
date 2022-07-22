@@ -24,7 +24,7 @@ export const HeaderStyle = styled.div`
   }
 
   div {
-    ${({ distance }) => (distance ? `margin-bottom:0px;` : `margin-bottom:58px;`)}
+    ${({ distance }) => (distance ? `margin-bottom:0px;` : `margin-bottom:85px;`)}
   }
 
   .header {
