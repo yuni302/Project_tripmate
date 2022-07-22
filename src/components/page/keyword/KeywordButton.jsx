@@ -19,7 +19,7 @@ const KeywordButton = (props) => {
 
   const increasePage = () => {
     if (page === maxPage - 1) {
-      navigate('/');
+      navigate('/login');
       console.log(answerList);
     } else {
       addAnswer(checkAnswer(answer).map((data) => data.classList[0]));

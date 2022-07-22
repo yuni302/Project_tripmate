@@ -56,7 +56,7 @@ const SignUpBox = () => {
     setBirth(Number(year + handleBirth(month) + handleBirth(day)));
   }, [year, month, day]);
 
-  const Submit = (e) => {
+  const Submit = async (e) => {
     e.preventDefault();
     setDisable(false);
     const body = {
@@ -66,14 +66,13 @@ const SignUpBox = () => {
       gender,
       birth,
     };
-
-    axios
-      .post('https://stfe-gotogether.herokuapp.com/user/register', body)
-      .then((res) => {
-        dispatch(joinUser(body));
-        navigation('/login');
-      })
-      .error((error) => console.err(error));
+    try {
+      await axios.post('https://stfe-gotogether.herokuapp.com/user/register', body);
+      dispatch(joinUser(body));
+      navigation('/keyword');
+    } catch (err) {
+      console.err('Error : ', err);
+    }
   };
 
   return (
