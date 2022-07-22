@@ -83,7 +83,7 @@ const Header = () => {
 
           <hr />
 
-          <div className="header-max">
+          <div id="header-max" className="header-max">
             <header id="header">
               <h1>
                 <Link to="/">
