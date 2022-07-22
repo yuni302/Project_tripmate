@@ -227,7 +227,7 @@ export const CalendarStyle = styled.div`
     }
   }
   .fc-day-today {
-    background-color: #ffe4a1;
+    background-color: #ffeab6 !important;
   }
   .fc-daygrid-event {
     position: absolute;
