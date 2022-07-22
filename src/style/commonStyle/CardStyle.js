@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 
 const AppearY = keyframes`
 	0%{
-		opacity: 0;
+		opacity: 0.5;
 		margin-top: 50px;
 	}
 	100%{
@@ -14,11 +14,12 @@ const AppearY = keyframes`
 const AppearX = keyframes`
 	0%{
 		opacity: 0;
-		margin-left: 50px;
+		margin-left: -10px;
 	}
+  
 	100%{
 		opacity: 1;
-		margin-left: 0;
+		margin-left: 24px;
 	}
 `;
 
@@ -90,6 +91,7 @@ export const GroupCard = styled(NormalCard)`
   border-radius: 8px;
   background-color: #fff;
   color: #1b1b1b;
+
   filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.1));
   img {
     border-radius: 8px 8px 0px 0px;
