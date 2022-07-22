@@ -52,13 +52,22 @@ const Question = ({ event, page, setPage, maxPage }) => {
   };
 
   // Anyone 선택시 다른 선택지 false
-  const handleAnyOne = () => {
-    [...checkBox].forEach((element) => {
-      if (element.id !== 'anyone') {
-        element.checked = false;
-        element.disabled = true;
-      }
-    });
+  const handleAnyOne = (e) => {
+    if (e.target.checked === true) {
+      [...checkBox].forEach((element) => {
+        if (element.id !== 'anyone') {
+          element.checked = false;
+          element.disabled = true;
+        }
+      });
+    } else {
+      [...checkBox].forEach((element) => {
+        if (element.id !== 'anyone') {
+          element.checked = false;
+          element.disabled = false;
+        }
+      });
+    }
     checkSelect();
   };
 
