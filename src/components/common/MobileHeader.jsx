@@ -24,6 +24,9 @@ const MobileHeader = () => {
     if (scroll > 78) {
       setScroll(window.pageYOffset);
       setDistance(false);
+    } else if (scroll === 0) {
+      setScroll(window.pageYOffset);
+      setDistance(false);
     } else {
       setScroll(window.pageYOffset);
       setDistance(true);
