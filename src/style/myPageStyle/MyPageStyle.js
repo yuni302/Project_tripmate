@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const MyPageStyle = styled.div`
+  width: 1440px;
+  margin: 0 auto;
   margin-bottom: 100px;
   .myPage {
     display: block;
-    margin: 85px 0 43px 200px;
+    margin: 85px 0 43px 80px;
     font-size: 26px;
     font-weight: 700;
   }
