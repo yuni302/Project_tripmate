@@ -22,6 +22,9 @@ const Header = () => {
     if (scroll > 141) {
       setScroll(window.pageYOffset);
       setDistance(false);
+    } else if (scroll === 0) {
+      setScroll(window.pageYOffset);
+      setDistance(false);
     } else {
       setScroll(window.pageYOffset);
       setDistance(true);
