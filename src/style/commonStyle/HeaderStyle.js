@@ -121,6 +121,7 @@ export const HeaderStyle = styled.div`
       width: 15%;
       max-width: 189px;
       text-align: center;
+      top: 0;
       span {
         display: block;
         color: #1b1b1b;
@@ -226,6 +227,7 @@ export const MobileHeaderStyle = styled(HeaderStyle)`
     justify-content: center;
     align-items: center;
     max-width: 992px;
+    top: 0;
     ${({ mobile }) => (mobile ? `position:relative;` : `position:fixed;`)}
     .content {
       max-height: 34px;
