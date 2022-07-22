@@ -5,8 +5,41 @@ import KeywordButton from './KeywordButton';
 
 const Question = ({ event, page, setPage, maxPage }) => {
   const [oneCheck, setOneCheck] = useState(true);
-  const [anyOneCheck, setAnyOneCheck] = useState(false);
   const checkBox = document.getElementsByClassName('button');
+  const [answerList, setAnswerList] = useState([]);
+  const [prevList, setPrevList] = useState([]);
+
+  // 한개 이상 체크 되었는지 확인
+  const checkSelect = () => {
+    /* eslint no-param-reassign: ["error", { "props": false }] */
+    const temp = [...checkBox].filter((data) => data.checked);
+    if (temp.length !== 0) {
+      setOneCheck(false);
+    } else {
+      setOneCheck(true);
+    }
+  };
+  useEffect(() => {
+    [...checkBox].forEach((element) => {
+      element.checked = false;
+      element.disabled = false;
+    });
+    if (prevList.length !== 0) {
+      if (prevList[0].includes('anyone')) {
+        [...checkBox].forEach((element) => {
+          if (element.id !== 'anyone') {
+            element.checked = false;
+            element.disabled = true;
+          }
+        });
+      }
+      prevList[0].forEach((element) => {
+        document.getElementById(element).checked = true;
+      });
+      setPrevList([]);
+    }
+    checkSelect();
+  }, [page]);
 
   // 추가 정보 on, off
   const switchDisplay = () => {
@@ -17,32 +50,17 @@ const Question = ({ event, page, setPage, maxPage }) => {
       hoverBox.style.display = 'block';
     }
   };
-  // 한개 이상 체크 되었는지 확인
-  const checkSelect = () => {
-    const temp = [...checkBox].filter((data) => data.checked);
-    if (temp.length !== 0) {
-      setOneCheck(false);
-    } else {
-      setOneCheck(true);
-    }
-  };
+
   // Anyone 선택시 다른 선택지 false
   const handleAnyOne = () => {
-    [...checkBox].slice(0, -1).forEach((element) => {
-      /* eslint no-param-reassign: ["error", { "props": false }] */
-      element.checked = false;
+    [...checkBox].forEach((element) => {
+      if (element.id !== 'anyone') {
+        element.checked = false;
+        element.disabled = true;
+      }
     });
-    setAnyOneCheck(!anyOneCheck);
     checkSelect();
   };
-  // 다음 페이지 이동시 선택지 false
-  useEffect(() => {
-    [...checkBox].forEach((element) => {
-      element.checked = false;
-    });
-    checkSelect();
-    setAnyOneCheck(false);
-  }, [page]);
 
   return (
     <>
@@ -77,7 +95,6 @@ const Question = ({ event, page, setPage, maxPage }) => {
                 className={`${data[0]} button`}
                 id={data[0]}
                 name={event.overlap ? null : event?.que}
-                disabled={anyOneCheck}
                 onClick={checkSelect}
               />
             ) : (
@@ -96,7 +113,17 @@ const Question = ({ event, page, setPage, maxPage }) => {
         ))}
       </div>
       <KeywordButtonStyle className="submit-button">
-        <KeywordButton currentPage={page} page={page} setPage={setPage} oneCheck={oneCheck} maxPage={maxPage} />
+        <KeywordButton
+          currentPage={page}
+          page={page}
+          setPage={setPage}
+          oneCheck={oneCheck}
+          maxPage={maxPage}
+          answerList={answerList}
+          setAnswerList={setAnswerList}
+          prevList={prevList}
+          setPrevList={setPrevList}
+        />
       </KeywordButtonStyle>
     </>
   );
