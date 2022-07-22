@@ -1,25 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const checkAnswer = (array) => array.filter((data) => data.checked === true);
 
-const KeywordButton = ({ currentPage, page, setPage, oneCheck, maxPage }) => {
+const KeywordButton = (props) => {
+  const navigate = useNavigate();
+  const { currentPage, page, setPage, oneCheck, maxPage, answerList, setAnswerList, setPrevList } = props;
   const answer = [...document.getElementsByTagName('input')];
-  const [answerList, setAnswerList] = useState([]);
 
   const addAnswer = (ans) => {
     const temp = [...answerList, ans];
     setAnswerList(temp);
   };
   const removeAnswer = () => {
+    setPrevList(answerList.slice(-1));
     setAnswerList(answerList.slice(0, -1));
   };
 
   const increasePage = () => {
     if (page === maxPage - 1) {
-      // 키워드 선택 완료 추후 api 연결 요망
+      navigate('/');
       console.log(answerList);
     } else {
       addAnswer(checkAnswer(answer).map((data) => data.classList[0]));
+      // 값 초기화
+      const checkBox = document.getElementsByClassName('button');
+      [...checkBox].forEach((element) => {
+        /* eslint no-param-reassign: ["error", { "props": false }] */
+        element.checked = false;
+        element.disabled = false;
+      });
       setPage(currentPage + 1);
     }
   };
