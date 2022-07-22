@@ -98,7 +98,6 @@ export const HeaderStyle = styled.div`
     background-color: #ffffff;
     transition: 1s;
     max-width: 1440px;
-    ${({ distance }) => (distance ? `position: relative;` : `position: fixed; top: 0;`)}
     &:hover {
       background-color: #fff;
     }
