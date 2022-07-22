@@ -221,6 +221,9 @@ export const KeywordListStyle = styled(ReservationStyle)`
     font-weight: 600;
     font-size: 20px;
   }
+  div {
+    position: relative;
+  }
   .select-box {
     position: absolute;
     width: 100%;
