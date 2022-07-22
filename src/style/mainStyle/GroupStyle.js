@@ -4,6 +4,7 @@ export const GroupContainer = styled.div`
   margin: 0 auto;
   margin-top: 100px;
   width: 1280px;
+  height: 595px;
 `;
 export const ThemeContainer = styled.div`
   margin: 100px auto;

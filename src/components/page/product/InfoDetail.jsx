@@ -45,7 +45,7 @@ const Detail = ({ productNum }) => {
       const temp = [];
       contentRef.current.map((data) => temp.push(data.getBoundingClientRect().top + window.pageYOffset - 1));
       setYCord(temp);
-    }, 200);
+    }, 500);
   }, [infoImg]);
 
   useEffect(() => {
